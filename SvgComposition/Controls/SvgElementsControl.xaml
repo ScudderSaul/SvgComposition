@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="SvgComposition.Controls.SvgElementComposition"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:SvgComposition.Controls"
+
+             mc:Ignorable="d" FontSize="9"
+             d:DesignHeight="600" d:DesignWidth="780">
+
+    <StackPanel HorizontalAlignment="Left">
+        <GroupBox x:Name="ElementCommandBox"  FontSize="11">
+            <StackPanel>
+                <WrapPanel Orientation="Horizontal" ToolTip="Svg Element Actions" Background="Beige" >
+                    <Button x:Name="SaveElementButton"  Click="SaveElementButton_OnClick"  Margin="3">Save</Button>
+                    <Button x:Name="AddChildButton"  Click="AddChildButton_OnClick"  Margin="3">Add Child Element</Button>
+                    <Button x:Name="RemoveChildButton"  Click="RemoveChildButton_OnClick"  Margin="3">Remove Child Element</Button>
+                    <Button x:Name="DuplicateChildButton"  Click="DuplicateChildButton_OnClick"  Margin="3">Duplicate Child Element</Button>
+                    <Button x:Name="CopyChildButton"  Click="CopyChildButton_OnClick"  Margin="3">Copy Child Element</Button>
+                    <Button x:Name="PasteChildButton"  Click="PasteChildButton_OnClick"  Margin="3">Paste Child Element</Button>
+                </WrapPanel>
+                <WrapPanel Orientation="Horizontal" ToolTip="Svg Element Actions" Background="Beige" >
+                    <Button x:Name="EditChildButton"  Click="EditChildButton_OnClick"  Margin="3">Edit Child Element</Button>
+                    <Button x:Name="AddContentButton"  Click="AddContentButton_OnClick"  Margin="3" IsEnabled="False">Edit Element Text</Button>
+                    <Button x:Name="SwapChildUpButton"  Click="SwapChildUpButton_OnClick"  Margin="3">Move Child Up</Button>
+                    <Button x:Name="SwapChildDowbButton"  Click="SwapChildDownButton_OnClick"  Margin="3">Move Child Down</Button>
+                  
+                    <Button x:Name="OpenParentButton"  Click="OpenParentButton_OnClick"  Margin="3">Edit Parent Element</Button>
+                   
+                </WrapPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox BorderBrush="DarkBlue" BorderThickness="1" FontSize="10">
+        <GroupBox.Header>
+            <TextBlock x:Name="ItemHeadText" Text="SvgElement Edit"></TextBlock>
+        </GroupBox.Header>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <WrapPanel x:Name="ElementControlsWrapPanel" Orientation="Horizontal"  HorizontalAlignment="Left" VerticalAlignment="Top">
+                </WrapPanel>
+                <controls:SvgScriptControl x:Name="ScriptView"></controls:SvgScriptControl>
+            </StackPanel>
+       
+          
+
+       
+   </GroupBox>
+    </StackPanel>
+</UserControl>

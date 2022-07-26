@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="SvgComposition.Controls.SvgScriptControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SvgComposition.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Expander Margin="2" Collapsed="Expander_OnCollapsed" Expanded="Expander_OnExpanded">
+        <Expander.Header>
+            <ContentControl>
+
+                <StackPanel Orientation="Horizontal" Margin="3">
+                    <TextBlock Text ="Svg Script " Margin="2,2,1,2"></TextBlock>
+                    <TextBlock x:Name="HeaderText" Margin="3"></TextBlock>
+                    <ComboBox x:Name="FontSizeComboBox" Background="Honeydew"  Width="50" Margin="2,2,2,2" HorizontalAlignment="Right"
+                             Height="26" 
+                              SelectionChanged="FontSizeComboBox_OnSelectionChanged"
+                              IsEditable="true" Visibility="Visible" ToolTip="Set the script font size"
+                              IsReadOnly="true">
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                        <ComboBoxItem>17</ComboBoxItem>
+                        <ComboBoxItem>18</ComboBoxItem>
+                       
+
+                    </ComboBox>
+
+                    <Button  Width="90"  Margin="2,2,2,0" HorizontalAlignment="Right"
+                             Height="26" x:Name="ClipboardCopyButton" Click="ClipboardCopyButton_OnClick">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Copy Script" FontSize="11" ToolTip="Copy script to clipboard"></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+            </ContentControl>
+        </Expander.Header>
+           <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+              
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Grid.Row="1" Grid.Column="0" Width="500" Height="300" HorizontalAlignment="Left">
+                <TextBlock x:Name="ShowSvgText"  Width="Auto" Height="Auto" TextWrapping="Wrap"
+                           MouseEnter="ShowSvgText_OnMouseEnter" 
+                           FontSize="9" Foreground="Black" Text="{Binding Path=SvgNodeText, Mode=OneWay}"  >
+
+                </TextBlock>
+
+            </ScrollViewer>
+
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right">
+               
+
+              
+            </StackPanel>
+
+        </Grid>
+       
+    </Expander>
+</UserControl>

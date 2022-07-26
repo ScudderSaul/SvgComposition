@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     id="Filtertexture" width="470" height="250" viewBox="0 0 470 250">
+    <filter id="conform" x="-50%" y="-50%" width="200%" height="200%" >
+        <feImage href="https://dragonsawaken.net/leho/symknot1.jpg" x="0" y="0" preserveAspectRatio="none" 
+                 height="100%" width="100%" ></feImage>
+
+        <feColorMatrix  type="saturate" result="IMAGE" values="0" ></feColorMatrix>
+
+        <feGaussianBlur in="IMAGE" stdDeviation="0.25" result="MAP" ></feGaussianBlur>
+
+        <feDisplacementMap in="SourceGraphic" in2="MAP" scale="15" xChannelSelector="R" yChannelSelector="R" 
+                           result="TEXTURED_TEXT" ></feDisplacementMap>
+
+        <feImage href="https://dragonsawaken.net/leho/symknot1.jpg" x="0" y="0" preserveAspectRatio="none" 
+                 height="100%" width="100%" result="BG" ></feImage>
+
+        <feColorMatrix in="TEXTURED_TEXT" type="matrix" values="1 0 0 0 0
+                       0 1 0 0 0 
+                       0 0 1 0 0 
+                       0 0 0 .9 0" 
+                       result="Textured_Text_2" ></feColorMatrix>
+
+        <feBlend in="BG" in2="Textured_Text_2" mode="multiply" result="BLENDED_TEXT" ></feBlend>
+
+        <feMerge >
+            <feMergeNode in="BG" ></feMergeNode>
+
+            <feMergeNode in="BLENDED_TEXT" ></feMergeNode>
+        </feMerge>
+    </filter>
+
+    <text dx="60" dy="200" font-size="10em" font-weight="bold" fill="#00826C" filter="url(#conform)" 
+    >Dragons Awaken</text>
+</svg>
+
+
+
+</body>
+</html>

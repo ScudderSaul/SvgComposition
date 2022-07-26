@@ -1,0 +1,19 @@
+   <svg xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0, 0, 300, 300" 
+   width="300px" height="300" x="0" y="0" id="Grand Play" >
+        <circle cx="0px" cy="50px" r="15px" stroke="#b22222" stroke-opacity="1.0" 
+        stroke-width="1px" fill="#9400d3" fill-opacity="1.0" >
+             <animate attributeName="cx" from="0" to="140" dur="5s" repeatCount="10001" 
+             attributeType="XML" >
+             </animate>
+             </circle>
+        <rect id="Background" x="0px" y="0" width="300px" height="300" 
+        rx="0px" ry="0px" stroke="#006400" stroke-opacity="1.0" stroke-width="1px" 
+        fill="#fff8dc" fill-opacity=".5" >
+        </rect>
+        <ellipse cx="100px" cy="100px" rx="60px" ry="80px" stroke="#808080" 
+        stroke-opacity="1.0" stroke-width="1px" fill="#daa520" fill-opacity="1.0" 
+        >
+        </ellipse>
+        </svg>

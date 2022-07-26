@@ -1,0 +1,2329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{B687A4A7-DE46-4BFD-8CB4-C651417721C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SvgComposition</RootNamespace>
+    <AssemblyName>SvgComposition</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <UseCodebase>true</UseCodebase>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
+    <StartAction>Program</StartAction>
+    <StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AttributeControls\AnimationEventAttributes\Svgonbegin.xaml.cs">
+      <DependentUpon>Svgonbegin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\AnimationEventAttributes\Svgonrepeat.xaml.cs">
+      <DependentUpon>Svgonrepeat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ColorAttributes\SvgFloodColor.xaml.cs">
+      <DependentUpon>SvgFloodColor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ColorAttributes\SvgLightingColor.xaml.cs">
+      <DependentUpon>SvgLightingColor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ColorAttributes\SvgStopColor.xaml.cs">
+      <DependentUpon>SvgStopColor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ColorAttributes\SvgTextDecoration.xaml.cs">
+      <DependentUpon>SvgTextDecoration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgFloodOpacity.xaml.cs">
+      <DependentUpon>SvgFloodOpacity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgFontFamily.xaml.cs">
+      <DependentUpon>SvgFontFamily.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgFontSize.xaml.cs">
+      <DependentUpon>SvgFontSize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgFontSizeAdjust.xaml.cs">
+      <DependentUpon>SvgFontSizeAdjust.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgFontVariant.xaml.cs">
+      <DependentUpon>SvgFontVariant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgFontWeight.xaml.cs">
+      <DependentUpon>SvgFontWeight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgIn.xaml.cs">
+      <DependentUpon>SvgIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgIn2.xaml.cs">
+      <DependentUpon>SvgIn2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgKerning.xaml.cs">
+      <DependentUpon>SvgKerning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgLetterSpacing.xaml.cs">
+      <DependentUpon>SvgLetterSpacing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgMarkerEnd.xaml.cs">
+      <DependentUpon>SvgMarkerEnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgMarkerMid.xaml.cs">
+      <DependentUpon>SvgMarkerMid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgMarkerStart.xaml.cs">
+      <DependentUpon>SvgMarkerStart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgOrient.xaml.cs">
+      <DependentUpon>SvgOrient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgPatternTransform.xaml.cs">
+      <DependentUpon>SvgPatternTransform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgPreserveAspectRatio.xaml.cs">
+      <DependentUpon>SvgPreserveAspectRatio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgRefX.xaml.cs">
+      <DependentUpon>SvgRefX.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgRefY.xaml.cs">
+      <DependentUpon>SvgRefY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgRepeatCount.xaml.cs">
+      <DependentUpon>SvgRepeatCount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgRotatea.xaml.cs">
+      <DependentUpon>SvgRotatea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgStopOpacity.xaml.cs">
+      <DependentUpon>SvgStopOpacity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgStrokeDasharray.xaml.cs">
+      <DependentUpon>SvgStrokeDasharray.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgTransform.xaml.cs">
+      <DependentUpon>SvgTransform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\DocumentElementEventAttributes\Svgoncopy.xaml.cs">
+      <DependentUpon>Svgoncopy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\DocumentElementEventAttributes\Svgoncut.xaml.cs">
+      <DependentUpon>Svgoncut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\DocumentElementEventAttributes\Svgonpaste.xaml.cs">
+      <DependentUpon>Svgonpaste.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\DocumentEventAttributes\Svgonabort.xaml.cs">
+      <DependentUpon>Svgonabort.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\DocumentEventAttributes\Svgonerror.xaml.cs">
+      <DependentUpon>Svgonerror.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\DocumentEventAttributes\Svgonresize.xaml.cs">
+      <DependentUpon>Svgonresize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\DocumentEventAttributes\Svgonscroll.xaml.cs">
+      <DependentUpon>Svgonscroll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\DocumentEventAttributes\Svgonunload.xaml.cs">
+      <DependentUpon>Svgonunload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgoncancel.xaml.cs">
+      <DependentUpon>Svgoncancel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgoncanplay.xaml.cs">
+      <DependentUpon>Svgoncanplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgoncanplaythrough.xaml.cs">
+      <DependentUpon>Svgoncanplaythrough.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonchange.xaml.cs">
+      <DependentUpon>Svgonchange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonclick.xaml.cs">
+      <DependentUpon>Svgonclick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonclose.xaml.cs">
+      <DependentUpon>Svgonclose.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgoncuechange.xaml.cs">
+      <DependentUpon>Svgoncuechange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgondblclick.xaml.cs">
+      <DependentUpon>Svgondblclick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgondrag.xaml.cs">
+      <DependentUpon>Svgondrag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgondragend.xaml.cs">
+      <DependentUpon>Svgondragend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgondragenter.xaml.cs">
+      <DependentUpon>Svgondragenter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgondragexit.xaml.cs">
+      <DependentUpon>Svgondragexit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgondragleave.xaml.cs">
+      <DependentUpon>Svgondragleave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgondragover.xaml.cs">
+      <DependentUpon>Svgondragover.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgondragstart.xaml.cs">
+      <DependentUpon>Svgondragstart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgondrop.xaml.cs">
+      <DependentUpon>Svgondrop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgondurationchange.xaml.cs">
+      <DependentUpon>Svgondurationchange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonemptied.xaml.cs">
+      <DependentUpon>Svgonemptied.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonended.xaml.cs">
+      <DependentUpon>Svgonended.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonerror.xaml.cs">
+      <DependentUpon>Svgonerror.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonfocus.xaml.cs">
+      <DependentUpon>Svgonfocus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgoninput.xaml.cs">
+      <DependentUpon>Svgoninput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgoninvalid.xaml.cs">
+      <DependentUpon>Svgoninvalid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonkeydown.xaml.cs">
+      <DependentUpon>Svgonkeydown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonkeypress.xaml.cs">
+      <DependentUpon>Svgonkeypress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonkeyup.xaml.cs">
+      <DependentUpon>Svgonkeyup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonload.xaml.cs">
+      <DependentUpon>Svgonload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonloadeddata.xaml.cs">
+      <DependentUpon>Svgonloadeddata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonloadedmetadata.xaml.cs">
+      <DependentUpon>Svgonloadedmetadata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonloadstart.xaml.cs">
+      <DependentUpon>Svgonloadstart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonmousedown.xaml.cs">
+      <DependentUpon>Svgonmousedown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonmouseenter.xaml.cs">
+      <DependentUpon>Svgonmouseenter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonmouseleave.xaml.cs">
+      <DependentUpon>Svgonmouseleave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonmousemove.xaml.cs">
+      <DependentUpon>Svgonmousemove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonmouseout.xaml.cs">
+      <DependentUpon>Svgonmouseout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonmouseover.xaml.cs">
+      <DependentUpon>Svgonmouseover.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonmouseup.xaml.cs">
+      <DependentUpon>Svgonmouseup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonmousewheel.xaml.cs">
+      <DependentUpon>Svgonmousewheel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonpause.xaml.cs">
+      <DependentUpon>Svgonpause.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonplay.xaml.cs">
+      <DependentUpon>Svgonplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonplaying.xaml.cs">
+      <DependentUpon>Svgonplaying.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonprogress.xaml.cs">
+      <DependentUpon>Svgonprogress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonratechange.xaml.cs">
+      <DependentUpon>Svgonratechange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonreset.xaml.cs">
+      <DependentUpon>Svgonreset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonresize.xaml.cs">
+      <DependentUpon>Svgonresize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonscroll.xaml.cs">
+      <DependentUpon>Svgonscroll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonseeked.xaml.cs">
+      <DependentUpon>Svgonseeked.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonseeking.xaml.cs">
+      <DependentUpon>Svgonseeking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonselect.xaml.cs">
+      <DependentUpon>Svgonselect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonshow.xaml.cs">
+      <DependentUpon>Svgonshow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonstalled.xaml.cs">
+      <DependentUpon>Svgonstalled.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonsubmit.xaml.cs">
+      <DependentUpon>Svgonsubmit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonsuspend.xaml.cs">
+      <DependentUpon>Svgonsuspend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgontimeupdate.xaml.cs">
+      <DependentUpon>Svgontimeupdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgontoggle.xaml.cs">
+      <DependentUpon>Svgontoggle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonvolumechange.xaml.cs">
+      <DependentUpon>Svgonvolumechange.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GlobalEventAttributes\Svgonwaiting.xaml.cs">
+      <DependentUpon>Svgonwaiting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GraphicalEventAttributes\Svgonactivate.xaml.cs">
+      <DependentUpon>Svgonactivate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GraphicalEventAttributes\Svgonfocusin.xaml.cs">
+      <DependentUpon>Svgonfocusin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\GraphicalEventAttributes\Svgonfocusout.xaml.cs">
+      <DependentUpon>Svgonfocusout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ISvgAttributeControl.cs" />
+    <Compile Include="AttributeControls\LenPerAttributes\SvgFr.xaml.cs">
+      <DependentUpon>SvgFr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgFx.xaml.cs">
+      <DependentUpon>SvgFx.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgFy.xaml.cs">
+      <DependentUpon>SvgFy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgHeight.xaml.cs">
+      <DependentUpon>SvgHeight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgMarkerHeight.xaml.cs">
+      <DependentUpon>SvgMarkerHeight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgMarkerWidth.xaml.cs">
+      <DependentUpon>SvgMarkerWidth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgRx.xaml.cs">
+      <DependentUpon>SvgRx.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgRy.xaml.cs">
+      <DependentUpon>SvgRy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgStrokeDashoffset.xaml.cs">
+      <DependentUpon>SvgStrokeDashoffset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgTextLength.xaml.cs">
+      <DependentUpon>SvgTextLength.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgWidth.xaml.cs">
+      <DependentUpon>SvgWidth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgWordSpacing.xaml.cs">
+      <DependentUpon>SvgWordSpacing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgX.xaml.cs">
+      <DependentUpon>SvgX.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgX1.xaml.cs">
+      <DependentUpon>SvgX1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgX2.xaml.cs">
+      <DependentUpon>SvgX2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgY.xaml.cs">
+      <DependentUpon>SvgY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgY1.xaml.cs">
+      <DependentUpon>SvgY1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgY2.xaml.cs">
+      <DependentUpon>SvgY2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgAccumulate.xaml.cs">
+      <DependentUpon>SvgAccumulate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgAdditive.xaml.cs">
+      <DependentUpon>SvgAdditive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgAlignmentBaseline.xaml.cs">
+      <DependentUpon>SvgAlignmentBaseline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgAttributeType.xaml.cs">
+      <DependentUpon>SvgAttributeType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgEdgeMode.xaml.cs">
+      <DependentUpon>SvgEdgeMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgExternalResourcesRequired.xaml.cs">
+      <DependentUpon>SvgExternalResourcesRequired.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgFillrule.xaml.cs">
+      <DependentUpon>SvgFillrule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgFilter.xaml.cs">
+      <DependentUpon>SvgFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgFilterUnits.xaml.cs">
+      <DependentUpon>SvgFilterUnits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgFontStyle.xaml.cs">
+      <DependentUpon>SvgFontStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgGradientUnits.xaml.cs">
+      <DependentUpon>SvgGradientUnits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgImageRendering.xaml.cs">
+      <DependentUpon>SvgImageRendering.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgLengthAdjust.xaml.cs">
+      <DependentUpon>SvgLengthAdjust.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgMarkerUnits.xaml.cs">
+      <DependentUpon>SvgMarkerUnits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgMaskUnits.xaml.cs">
+      <DependentUpon>SvgMaskUnits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgMaskContentUnits.xaml.cs">
+      <DependentUpon>SvgMaskContentUnits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgMode.xaml.cs">
+      <DependentUpon>SvgMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgOperator.xaml.cs">
+      <DependentUpon>SvgOperator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgOverflow.xaml.cs">
+      <DependentUpon>SvgOverflow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgPaintOrder.xaml.cs">
+      <DependentUpon>SvgPaintOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgPatternContentUnits.xaml.cs">
+      <DependentUpon>SvgPatternContentUnits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgPatternUnits.xaml.cs">
+      <DependentUpon>SvgPatternUnits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgPointerEvents.xaml.cs">
+      <DependentUpon>SvgPointerEvents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgPreserveAlpha.xaml.cs">
+      <DependentUpon>SvgPreserveAlpha.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgPrimitiveUnits.xaml.cs">
+      <DependentUpon>SvgPrimitiveUnits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgRestart.xaml.cs">
+      <DependentUpon>SvgRestart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgShapeRendering.xaml.cs">
+      <DependentUpon>SvgShapeRendering.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgSpreadMethod.xaml.cs">
+      <DependentUpon>SvgSpreadMethod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgStitchTiles.xaml.cs">
+      <DependentUpon>SvgStitchTiles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgStrokeLinecap.xaml.cs">
+      <DependentUpon>SvgStrokeLinecap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgStrokeLinejoin.xaml.cs">
+      <DependentUpon>SvgStrokeLinejoin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgTextAnchor.xaml.cs">
+      <DependentUpon>SvgTextAnchor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgTextRendering.xaml.cs">
+      <DependentUpon>SvgTextRendering.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgType.xaml.cs">
+      <DependentUpon>SvgType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgVectorEffect.xaml.cs">
+      <DependentUpon>SvgVectorEffect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgVisibility.xaml.cs">
+      <DependentUpon>SvgVisibility.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgWritingMode.xaml.cs">
+      <DependentUpon>SvgWritingMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgXChannelSelector.xaml.cs">
+      <DependentUpon>SvgXChannelSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgYChannelSelector.xaml.cs">
+      <DependentUpon>SvgYChannelSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\AnimationEventAttributes\Svgonend.xaml.cs">
+      <DependentUpon>Svgonend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgAMask.xaml.cs">
+      <DependentUpon>SvgAMask.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgAmplitude.xaml.cs">
+      <DependentUpon>SvgAmplitude.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgAStyle.xaml.cs">
+      <DependentUpon>SvgAStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgAttributeName.xaml.cs">
+      <DependentUpon>SvgAttributeName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgAzimuth.xaml.cs">
+      <DependentUpon>SvgAzimuth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgBy.xaml.cs">
+      <DependentUpon>SvgBy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgElevation.xaml.cs">
+      <DependentUpon>SvgElevation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgEnd.xaml.cs">
+      <DependentUpon>SvgEnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgExponent.xaml.cs">
+      <DependentUpon>SvgExponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgFrom.xaml.cs">
+      <DependentUpon>SvgFrom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgGradientTransform.xaml.cs">
+      <DependentUpon>SvgGradientTransform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgHref.xaml.cs">
+      <DependentUpon>SvgHref.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgId.xaml.cs">
+      <DependentUpon>SvgId.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgK1.xaml.cs">
+      <DependentUpon>SvgK1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgK2.xaml.cs">
+      <DependentUpon>SvgK2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgK3.xaml.cs">
+      <DependentUpon>SvgK3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgK4.xaml.cs">
+      <DependentUpon>SvgK4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgKernelMatrix.xaml.cs">
+      <DependentUpon>SvgKernelMatrix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgKeyPoints.xaml.cs">
+      <DependentUpon>SvgKeyPoints.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgKeySplines.xaml.cs">
+      <DependentUpon>SvgKeySplines.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgKeyTimes.xaml.cs">
+      <DependentUpon>SvgKeyTimes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgLimitingConeAngle.xaml.cs">
+      <DependentUpon>SvgLimitingConeAngle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgMax.xaml.cs">
+      <DependentUpon>SvgMax.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgMin.xaml.cs">
+      <DependentUpon>SvgMin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgNumOctaves.xaml.cs">
+      <DependentUpon>SvgNumOctaves.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgOffset.xaml.cs">
+      <DependentUpon>SvgOffset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgPathLength.xaml.cs">
+      <DependentUpon>SvgPathLength.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgPoints.xaml.cs">
+      <DependentUpon>SvgPoints.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgPointsAtX.xaml.cs">
+      <DependentUpon>SvgPointsAtX.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgPointsAtY.xaml.cs">
+      <DependentUpon>SvgPointsAtY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgPointsAtZ.xaml.cs">
+      <DependentUpon>SvgPointsAtZ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgRepeatDur.xaml.cs">
+      <DependentUpon>SvgRepeatDur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgResult.xaml.cs">
+      <DependentUpon>SvgResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgScale.xaml.cs">
+      <DependentUpon>SvgScale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgSeed.xaml.cs">
+      <DependentUpon>SvgSeed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgSpecularExponent.xaml.cs">
+      <DependentUpon>SvgSpecularExponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgSpecularConstant.xaml.cs">
+      <DependentUpon>SvgSpecularConstant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgStrokeMiterlimit.xaml.cs">
+      <DependentUpon>SvgStrokeMiterlimit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgSurfaceScale.xaml.cs">
+      <DependentUpon>SvgSurfaceScale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgTabindex.xaml.cs">
+      <DependentUpon>SvgTabindex.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgTableValues.xaml.cs">
+      <DependentUpon>SvgTableValues.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgTargetX.xaml.cs">
+      <DependentUpon>SvgTargetX.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgTargetY.xaml.cs">
+      <DependentUpon>SvgTargetY.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgTo.xaml.cs">
+      <DependentUpon>SvgTo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgValues.xaml.cs">
+      <DependentUpon>SvgValues.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgViewBox.xaml.cs">
+      <DependentUpon>SvgViewBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgZ.xaml.cs">
+      <DependentUpon>SvgZ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueOptAttributes\SvgBaseFrequency.xaml.cs">
+      <DependentUpon>SvgBaseFrequency.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgBegin.xaml.cs">
+      <DependentUpon>SvgBegin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgBias.xaml.cs">
+      <DependentUpon>SvgBias.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgCalcMode.xaml.cs">
+      <DependentUpon>SvgCalcMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgClass.xaml.cs">
+      <DependentUpon>SvgClass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgClipPath.xaml.cs">
+      <DependentUpon>SvgClipPath.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgClipRule.xaml.cs">
+      <DependentUpon>SvgClipRule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgColorInterpolationFilters.xaml.cs">
+      <DependentUpon>SvgColorInterpolationFilters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgColorRendering.xaml.cs">
+      <DependentUpon>SvgColorRendering.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgCx.xaml.cs">
+      <DependentUpon>SvgCx.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgCy.xaml.cs">
+      <DependentUpon>SvgCy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueOptAttributes\SvgD.xaml.cs">
+      <DependentUpon>SvgD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueOptAttributes\SvgDiffuseConstant.xaml.cs">
+      <DependentUpon>SvgDiffuseConstant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgDirection.xaml.cs">
+      <DependentUpon>SvgDirection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgDisplay.xaml.cs">
+      <DependentUpon>SvgDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueOptAttributes\SvgDivisor.xaml.cs">
+      <DependentUpon>SvgDivisor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\SelectionAttributes\SvgDominantBaseline.xaml.cs">
+      <DependentUpon>SvgDominantBaseline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ComboAttributes\SvgDur.xaml.cs">
+      <DependentUpon>SvgDur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgDx.xaml.cs">
+      <DependentUpon>SvgDx.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgDy.xaml.cs">
+      <DependentUpon>SvgDy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ColorAttributes\SvgFill.xaml.cs">
+      <DependentUpon>SvgFill.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgFillOpacity.xaml.cs">
+      <DependentUpon>SvgFillOpacity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgOpacity.xaml.cs">
+      <DependentUpon>SvgOpacity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgR.xaml.cs">
+      <DependentUpon>SvgR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ColorAttributes\SvgStroke.xaml.cs">
+      <DependentUpon>SvgStroke.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueAttributes\SvgStrokeOpacity.xaml.cs">
+      <DependentUpon>SvgStrokeOpacity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\LenPerAttributes\SvgStrokeWidth.xaml.cs">
+      <DependentUpon>SvgStrokeWidth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueOptAttributes\SvgKernelUnitLength.xaml.cs">
+      <DependentUpon>SvgKernelUnitLength.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueOptAttributes\SvgOrder.xaml.cs">
+      <DependentUpon>SvgOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueOptAttributes\SvgPatha.xaml.cs">
+      <DependentUpon>SvgPatha.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueOptAttributes\SvgRadius.xaml.cs">
+      <DependentUpon>SvgRadius.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AttributeControls\ValueOptAttributes\SvgStdDeviation.xaml.cs">
+      <DependentUpon>SvgStdDeviation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BitmapConversion.cs" />
+    <Compile Include="Controls\FormattedSlider.cs" />
+    <Compile Include="Controls\HelpControl.xaml.cs">
+      <DependentUpon>HelpControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SvgViewerWpf.xaml.cs">
+      <DependentUpon>SvgViewerWpf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SvgContentControl.xaml.cs">
+      <DependentUpon>SvgContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\LenPerUnits.cs" />
+    <Compile Include="Dialogs\ChooseAttribute.xaml.cs">
+      <DependentUpon>ChooseAttribute.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ChooseChildElement.xaml.cs">
+      <DependentUpon>ChooseChildElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\AnimationElements\SvgAnimateMotion.xaml.cs">
+      <DependentUpon>SvgAnimateMotion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\AnimationElements\SvgMpath.xaml.cs">
+      <DependentUpon>SvgMpath.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\AnimationElements\SvgSet.xaml.cs">
+      <DependentUpon>SvgSet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\BasicShapes\SvgPath.xaml.cs">
+      <DependentUpon>SvgPath.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\BasicShapes\SvgPolygon.xaml.cs">
+      <DependentUpon>SvgPolygon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\BasicShapes\SvgPolyline.xaml.cs">
+      <DependentUpon>SvgPolyline.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\ContainerElements\SvgMarker.xaml.cs">
+      <DependentUpon>SvgMarker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\ContainerElements\SvgMask.xaml.cs">
+      <DependentUpon>SvgMask.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\ContainerElements\SvgPattern.xaml.cs">
+      <DependentUpon>SvgPattern.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\ContainerElements\SvgSwitch.xaml.cs">
+      <DependentUpon>SvgSwitch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\ContainerElements\SvgSymbol.xaml.cs">
+      <DependentUpon>SvgSymbol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\DescriptiveElements\SvgMetadata.xaml.cs">
+      <DependentUpon>SvgMetadata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\DescriptiveElements\SvgTitle.xaml.cs">
+      <DependentUpon>SvgTitle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeComponentTransfer.xaml.cs">
+      <DependentUpon>SvgfeComponentTransfer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeComposite.xaml.cs">
+      <DependentUpon>SvgfeComposite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeConvolveMatrix.xaml.cs">
+      <DependentUpon>SvgfeConvolveMatrix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeDiffuseLighting.xaml.cs">
+      <DependentUpon>SvgfeDiffuseLighting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeDisplacementMap.xaml.cs">
+      <DependentUpon>SvgfeDisplacementMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeDistantLight.xaml.cs">
+      <DependentUpon>SvgfeDistantLight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeDropShadow.xaml.cs">
+      <DependentUpon>SvgfeDropShadow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeFlood.xaml.cs">
+      <DependentUpon>SvgfeFlood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeFuncA.xaml.cs">
+      <DependentUpon>SvgfeFuncA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeFuncB.xaml.cs">
+      <DependentUpon>SvgfeFuncB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeFuncG.xaml.cs">
+      <DependentUpon>SvgfeFuncG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeFuncR.xaml.cs">
+      <DependentUpon>SvgfeFuncR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeGaussianBlur.xaml.cs">
+      <DependentUpon>SvgfeGaussianBlur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeImage.xaml.cs">
+      <DependentUpon>SvgfeImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeMerge.xaml.cs">
+      <DependentUpon>SvgfeMerge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeMergeNode.xaml.cs">
+      <DependentUpon>SvgfeMergeNode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeMorphology.xaml.cs">
+      <DependentUpon>SvgfeMorphology.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeOffset.xaml.cs">
+      <DependentUpon>SvgfeOffset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfePointLight.xaml.cs">
+      <DependentUpon>SvgfePointLight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeSpecularLighting.xaml.cs">
+      <DependentUpon>SvgfeSpecularLighting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeSpotLight.xaml.cs">
+      <DependentUpon>SvgfeSpotLight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeTile.xaml.cs">
+      <DependentUpon>SvgfeTile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeTurbulence.xaml.cs">
+      <DependentUpon>SvgfeTurbulence.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\GradientElements\SvgLinearGradient.xaml.cs">
+      <DependentUpon>SvgLinearGradient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\GradientElements\SvgRadialGradient.xaml.cs">
+      <DependentUpon>SvgRadialGradient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\GradientElements\SvgStop.xaml.cs">
+      <DependentUpon>SvgStop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\GraphicElements\SvgImage.xaml.cs">
+      <DependentUpon>SvgImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\GraphicElements\SvgUse.xaml.cs">
+      <DependentUpon>SvgUse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\ISvgElementControl.cs" />
+    <Compile Include="ElementControls\ContainerElements\SvgA.xaml.cs">
+      <DependentUpon>SvgA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\AnimationElements\SvgAnimate.xaml.cs">
+      <DependentUpon>SvgAnimate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\AnimationElements\SvgAnimateTransform.xaml.cs">
+      <DependentUpon>SvgAnimateTransform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\ContainerElements\SvgDefs.xaml.cs">
+      <DependentUpon>SvgDefs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\DescriptiveElements\SvgDesc.xaml.cs">
+      <DependentUpon>SvgDesc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\BasicShapes\SvgEllipse.xaml.cs">
+      <DependentUpon>SvgEllipse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeBlend.xaml.cs">
+      <DependentUpon>SvgfeBlend.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\FilterPrimitiveElements\SvgfeColorMatrix.xaml.cs">
+      <DependentUpon>SvgfeColorMatrix.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\ContainerElements\SvgG.xaml.cs">
+      <DependentUpon>SvgG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\BasicShapes\SvgLine.xaml.cs">
+      <DependentUpon>SvgLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\BasicShapes\SvgRect.xaml.cs">
+      <DependentUpon>SvgRect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\ContainerElements\SvgSvg.xaml.cs">
+      <DependentUpon>SvgSvg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\OtherElements\SvgFilter.xaml.cs">
+      <DependentUpon>SvgFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\OtherElements\SvgForeignObject.xaml.cs">
+      <DependentUpon>SvgForeignObject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\OtherElements\SvgHatch.xaml.cs">
+      <DependentUpon>SvgHatch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\OtherElements\SvgHatchpath.xaml.cs">
+      <DependentUpon>SvgHatchpath.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\OtherElements\SvgScript.xaml.cs">
+      <DependentUpon>SvgScript.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\OtherElements\SvgStyle.xaml.cs">
+      <DependentUpon>SvgStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\OtherElements\SvgView.xaml.cs">
+      <DependentUpon>SvgView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\TextContentElements\SvgText.xaml.cs">
+      <DependentUpon>SvgText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\TextContentElements\SvgTextPath.xaml.cs">
+      <DependentUpon>SvgTextPath.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\TextContentElements\SvgTspan.xaml.cs">
+      <DependentUpon>SvgTspan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementDbDupicationTool.cs" />
+    <Compile Include="ExampleGenerator.cs" />
+    <Compile Include="Model\SvgToolStorage.cs" />
+    <Compile Include="OddsAndEnds.cs" />
+    <Compile Include="SvgAttributeCreation.cs" />
+    <Compile Include="SvgElementCreator.cs" />
+    <Compile Include="SvgInfo.cs" />
+    <Compile Include="CodeGeneration.cs" />
+    <Compile Include="Controls\ColorButton.xaml.cs">
+      <DependentUpon>ColorButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ColorPicker.xaml.cs">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SvgElementsControl.xaml.cs">
+      <DependentUpon>SvgElementsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SvgBuildControl.xaml.cs">
+      <DependentUpon>SvgBuildControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SvgCompositionControl.xaml.cs">
+      <DependentUpon>SvgCompositionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementControls\BasicShapes\SvgCircle.xaml.cs">
+      <DependentUpon>SvgCircle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SvgScriptControl.xaml.cs">
+      <DependentUpon>SvgScriptControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TypeSelector.xaml.cs">
+      <DependentUpon>TypeSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UnitSelector.xaml.cs">
+      <DependentUpon>UnitSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\ColorConverter.cs" />
+    <Compile Include="Converters\DateTimeConverter.cs" />
+    <Compile Include="Converters\DoubleConverter.cs" />
+    <Compile Include="Converters\IntConverter.cs" />
+    <Compile Include="Dialogs\BrowserWindow.xaml.cs">
+      <DependentUpon>BrowserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ChooseSvgElement.xaml.cs">
+      <DependentUpon>ChooseSvgElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SvgAttribute.cs" />
+    <Compile Include="Model\SvgColor.cs" />
+    <Compile Include="Model\SvgElement.cs" />
+    <Compile Include="Model\SvgModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SvgCompositionPackage.cs" />
+    <Compile Include="SvgToolWindow.cs" />
+    <Compile Include="SvgToolWindowCommand.cs" />
+    <Compile Include="SvgToolWindowControl.xaml.cs">
+      <DependentUpon>SvgToolWindowControl.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.4</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.2.32505.173" ExcludeAssets="runtime">
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.2.2195">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Svg">
+      <Version>3.4.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AttributeControls\AnimationEventAttributes\Svgonbegin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\AnimationEventAttributes\Svgonrepeat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ColorAttributes\SvgFloodColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ColorAttributes\SvgLightingColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ColorAttributes\SvgStopColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ColorAttributes\SvgTextDecoration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgFloodOpacity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgFontFamily.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgFontSize.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgFontSizeAdjust.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgFontVariant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgFontWeight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgIn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgIn2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgKerning.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgLetterSpacing.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgMarkerEnd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgMarkerMid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgMarkerStart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgOrient.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgPatternTransform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgPreserveAspectRatio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgRefX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgRefY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgRepeatCount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgRotatea.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgStopOpacity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgStrokeDasharray.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgTransform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\DocumentElementEventAttributes\Svgoncopy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\DocumentElementEventAttributes\Svgoncut.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\DocumentElementEventAttributes\Svgonpaste.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\DocumentEventAttributes\Svgonabort.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\DocumentEventAttributes\Svgonerror.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\DocumentEventAttributes\Svgonresize.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\DocumentEventAttributes\Svgonscroll.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\DocumentEventAttributes\Svgonunload.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgoncancel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgoncanplay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgoncanplaythrough.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonchange.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonclick.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonclose.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgoncuechange.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgondblclick.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgondrag.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgondragend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgondragenter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgondragexit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgondragleave.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgondragover.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgondragstart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgondrop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgondurationchange.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonemptied.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonended.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonerror.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonfocus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgoninput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgoninvalid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonkeydown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonkeypress.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonkeyup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonload.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonloadeddata.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonloadedmetadata.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonloadstart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonmousedown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonmouseenter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonmouseleave.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonmousemove.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonmouseout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonmouseover.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonmouseup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonmousewheel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonpause.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonplay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonplaying.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonprogress.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonratechange.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonreset.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonresize.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonscroll.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonseeked.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonseeking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonselect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonshow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonstalled.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonsubmit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonsuspend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgontimeupdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgontoggle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonvolumechange.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GlobalEventAttributes\Svgonwaiting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GraphicalEventAttributes\Svgonactivate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GraphicalEventAttributes\Svgonfocusin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\GraphicalEventAttributes\Svgonfocusout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgFr.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgFx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgFy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgHeight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgMarkerHeight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgMarkerWidth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgRx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgRy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgStrokeDashoffset.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgTextLength.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgWidth.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgWordSpacing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgX1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgX2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgY1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgY2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgAccumulate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgAdditive.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgAlignmentBaseline.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgAttributeType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgEdgeMode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgExternalResourcesRequired.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgFillrule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgFilter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgFilterUnits.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgFontStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgGradientUnits.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgImageRendering.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgLengthAdjust.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgMarkerUnits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgMaskUnits.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgMaskContentUnits.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgMode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgOperator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgOverflow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgPaintOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgPatternContentUnits.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgPatternUnits.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgPointerEvents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgPreserveAlpha.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgPrimitiveUnits.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgRestart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgShapeRendering.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgSpreadMethod.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgStitchTiles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgStrokeLinecap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgStrokeLinejoin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgTextAnchor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgTextRendering.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgVectorEffect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgVisibility.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgWritingMode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgXChannelSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgYChannelSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\AnimationEventAttributes\Svgonend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgAMask.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgAmplitude.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgAStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgAttributeName.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgAzimuth.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgBy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgElevation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgEnd.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgExponent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgFrom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgGradientTransform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgHref.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgId.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgK1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgK2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgK3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgK4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgKernelMatrix.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgKeyPoints.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgKeySplines.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgKeyTimes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgLimitingConeAngle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgMax.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgMin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgNumOctaves.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgOffset.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgPathLength.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgPoints.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgPointsAtX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgPointsAtY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgPointsAtZ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgRepeatDur.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgResult.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgScale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgSeed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgSpecularExponent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgSpecularConstant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgStrokeMiterlimit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgSurfaceScale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgTabindex.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgTableValues.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgTargetX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgTargetY.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgTo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgValues.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgViewBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgZ.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueOptAttributes\SvgBaseFrequency.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgBegin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgBias.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgCalcMode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgClass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgClipPath.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgClipRule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgColorInterpolationFilters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgColorRendering.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgCx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgCy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueOptAttributes\SvgD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueOptAttributes\SvgDiffuseConstant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgDirection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgDisplay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueOptAttributes\SvgDivisor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\SelectionAttributes\SvgDominantBaseline.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ComboAttributes\SvgDur.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgDx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgDy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ColorAttributes\SvgFill.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgFillOpacity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgOpacity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ColorAttributes\SvgStroke.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueAttributes\SvgStrokeOpacity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\LenPerAttributes\SvgStrokeWidth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="AttributeControls\ValueOptAttributes\SvgKernelUnitLength.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueOptAttributes\SvgOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueOptAttributes\SvgPatha.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueOptAttributes\SvgRadius.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AttributeControls\ValueOptAttributes\SvgStdDeviation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ColorButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ColorPicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\HelpControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SvgViewerWpf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\SvgContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SvgElementsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SvgBuildControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SvgCompositionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\ChooseAttribute.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\ChooseChildElement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\AnimationElements\SvgAnimateMotion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\AnimationElements\SvgMpath.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\AnimationElements\SvgSet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\BasicShapes\SvgPath.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\BasicShapes\SvgPolygon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\BasicShapes\SvgPolyline.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\ContainerElements\SvgA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\AnimationElements\SvgAnimate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\AnimationElements\SvgAnimateTransform.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\BasicShapes\SvgCircle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SvgScriptControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TypeSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UnitSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\BrowserWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Dialogs\ChooseSvgElement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\ContainerElements\SvgDefs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\ContainerElements\SvgMarker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\ContainerElements\SvgMask.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\ContainerElements\SvgPattern.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\ContainerElements\SvgSwitch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\ContainerElements\SvgSymbol.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\DescriptiveElements\SvgDesc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\BasicShapes\SvgEllipse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\DescriptiveElements\SvgMetadata.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\DescriptiveElements\SvgTitle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeBlend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeColorMatrix.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\ContainerElements\SvgG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\BasicShapes\SvgLine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\BasicShapes\SvgRect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="ElementControls\ContainerElements\SvgSvg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeComponentTransfer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeComposite.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeConvolveMatrix.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeDiffuseLighting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeDisplacementMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeDistantLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeDropShadow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeFlood.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeFuncA.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeFuncB.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeFuncG.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeFuncR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeGaussianBlur.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeMerge.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeMergeNode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeMorphology.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeOffset.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfePointLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeSpecularLighting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeSpotLight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeTile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\FilterPrimitiveElements\SvgfeTurbulence.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\GradientElements\SvgLinearGradient.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\GradientElements\SvgRadialGradient.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\GradientElements\SvgStop.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\GraphicElements\SvgImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\GraphicElements\SvgUse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\OtherElements\SvgFilter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\OtherElements\SvgForeignObject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\OtherElements\SvgHatch.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\OtherElements\SvgHatchpath.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\OtherElements\SvgScript.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\OtherElements\SvgStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\OtherElements\SvgView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\TextContentElements\SvgText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\TextContentElements\SvgTextPath.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ElementControls\TextContentElements\SvgTspan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SvgToolWindowControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\SvgToolWindowCommand.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <VSCTCompile Include="SvgCompositionPackage.vsct">
+      <ResourceName>Menus.ctmenu</ResourceName>
+    </VSCTCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="Window\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

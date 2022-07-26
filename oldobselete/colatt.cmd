@@ -1,0 +1,15 @@
+rem color
+rem copy SvgComposition\AttributeControls\ColorAttributes\SvgFill.xaml SvgComposition\AttributeControls\ColorAttributes\Svg
+rem copy SvgComposition\AttributeControls\ColorAttributes\SvgFill.xaml.cs SvgComposition\AttributeControls\ColorAttributes\Svg
+
+copy SvgComposition\AttributeControls\ColorAttributes\SvgFill.xaml SvgComposition\AttributeControls\ColorAttributes\SvgFloodColor.xaml
+copy SvgComposition\AttributeControls\ColorAttributes\SvgFill.xaml.cs SvgComposition\AttributeControls\ColorAttributes\SvgFloodColor.xaml.cs
+
+copy SvgComposition\AttributeControls\ColorAttributes\SvgFill.xaml SvgComposition\AttributeControls\ColorAttributes\SvgLightingColor.xaml
+copy SvgComposition\AttributeControls\ColorAttributes\SvgFill.xaml.cs SvgComposition\AttributeControls\ColorAttributes\SvgLightingColor.xaml.cs
+
+copy SvgComposition\AttributeControls\ColorAttributes\SvgFill.xaml SvgComposition\AttributeControls\ColorAttributes\SvgStopColor.xaml
+copy SvgComposition\AttributeControls\ColorAttributes\SvgFill.xaml.cs SvgComposition\AttributeControls\ColorAttributes\SvgStopColor.xaml.cs
+
+copy SvgComposition\AttributeControls\ColorAttributes\SvgFill.xaml SvgComposition\AttributeControls\ColorAttributes\SvgTextDecoration.xaml
+copy SvgComposition\AttributeControls\ColorAttributes\SvgFill.xaml.cs SvgComposition\AttributeControls\ColorAttributes\SvgTextDecoration.xaml.cs

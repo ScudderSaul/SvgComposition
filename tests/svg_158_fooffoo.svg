@@ -1,0 +1,13 @@
+   <svg xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="fooffoo" 
+   viewBox="0, 0, 400, 400" width="400" height="400" x="100" y="20" >
+        <rect x="0" y="0" width="300" height="300" stroke="#000000" stroke-opacity="1.0" stroke-width="1" 
+        fill="#000000" fill-opacity="1.0" ></rect>
+
+        <rect id="rect2" x="0" y="0" width="30" height="20" stroke="#000000" stroke-opacity="1.0" stroke-width="1" 
+        fill="#00bfff" fill-opacity=".5" >
+             <animateMotion path="M 250,80 H 50 Q 30,80 30,50 Q 30,20 50,20 H 250 Q 280,20,280,50 Q 280,80,250,80Z" 
+             dur="3s" repeatCount="indefinite" rotate="auto" ></animateMotion>
+</rect>
+</svg>

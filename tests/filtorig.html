@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         width="470" height="250" viewBox="0 0 470 250">
+        <!-- I'm extending the filter region just to increase its area for visual purposes. This is not required or needed for the effect to work.-->
+        <filter id="conform" x="-50%" y="-50%" width="200%" height="200%">
+
+            <!-- Get the image. -->
+            <feImage xlink:href="https://dragonsawaken.net/leho/symknot1.jpg" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none"></feImage>
+
+            <!-- Desaturate the image. -->
+            <feColorMatrix type="saturate" values="0" result="IMAGE" />
+
+            <!-- decrease level of details so the effect on text is more realistic -->
+            <feGaussianBlur in="IMAGE" stdDeviation="0.25" result="MAP"></feGaussianBlur>
+
+            <!-- Use the displacement map to distort the source text -->
+            <feDisplacementMap in="SourceGraphic" in2="MAP" scale="15" xChannelSelector="R" yChannelSelector="R" result="TEXTURED_TEXT"></feDisplacementMap>
+
+            <!---->
+            <feImage xlink:href="https://dragonsawaken.net/leho/symknot1.jpg" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="BG"></feImage>
+
+            <!-- Reduce the opacity of the text -->
+            <feColorMatrix in="Textured_Text" result="Textured_Text_2" type="matrix"
+                           values="1 0 0 0 0
+                   0 1 0 0 0
+                   0 0 1 0 0
+                   0 0 0 .9 0" />
+
+            <!-- Blend the text with the background -->
+            <feBlend in="BG" in2="Textured_Text_2" mode="multiply" result="BLENDED_TEXT"></feBlend>
+
+            <!-- Layer the text on top of the background image -->
+            <feMerge>
+                <feMergeNode in="BG"></feMergeNode>
+                <feMergeNode in="BLENDED_TEXT"></feMergeNode>
+            </feMerge>
+        </filter>
+
+        <text dx="60" dy="200" font-size="10em" font-weight="bold" filter="url(#conform)" fill="#00826C"> organic </text>
+    </svg>
+</body>
+</html>

@@ -1,0 +1,192 @@
+﻿<UserControl x:Class="SvgComposition.Controls.HelpControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SvgComposition.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <GroupBox Background="Honeydew"  FontSize="10" Foreground="DarkGreen">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="AboutDetailsButton"  Click="AboutDetailsButton_OnClick"  Margin="3">About</Button>
+                <Button x:Name="HelpDetailsButton"  Click="HelpDetailsButton_OnClick"  Margin="3" >Basic Help</Button>
+                <Button x:Name="ExamplesButton"  Click="ExamplesButton_OnClick"  Margin="3">Examples</Button>
+                <Button x:Name="CloseButton"  Click="CloseButton_OnClick"  Margin="3">Close</Button>
+            </StackPanel>
+            <ScrollViewer x:Name="AboutDetailsScrollViewer" FontSize="11" Visibility="Collapsed">
+                <Grid MaxWidth="700" MaxHeight="500" HorizontalAlignment="Left" Margin="5">
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition MaxWidth="700" MinWidth="200"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" Margin="6"
+                       Text="     SvgComposition is a simple tool for textual SVG composition in Visual studio, It is not a SVG generator/editor like Inkscape, 
+ and works only with SVG (SVG 2.0 was the plan). Scripts can be edited and then exported to '.svg' or '.html' files."  >
+
+                    </TextBlock>
+                    <TextBlock Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Margin="6"
+                               Text="All SVG element and attribute data is 
+ held in a database in the local SQL instance that Visual Studio 2019 creates when configured 
+ for desktop development." >
+
+                    </TextBlock>
+                    <TextBlock Grid.Column="0" Grid.Row="2" TextWrapping="Wrap" Margin="6"
+                        Text="As this is the first version of this program and developed by a single developer please report any problems or bugs."  >
+
+                    </TextBlock>
+                    <TextBlock Grid.Column="0" Grid.Row="3" TextWrapping="Wrap" Margin="6"
+                        Text="The view image button code uses the library SVG from https://github.com/vvvv/SVG 
+authored by mrbean-bremen,davescriven,jvenema,owaits,ddpruitt,Ralf1108,Tebjan Halm,and others."></TextBlock>
+                </Grid>
+
+            </ScrollViewer>
+
+
+            <ScrollViewer x:Name="BasicHelpScrollViewer" FontSize="11" Visibility="Collapsed" >
+                <Grid MaxWidth="700" MaxHeight="500" HorizontalAlignment="Left" Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition MaxWidth="700" MinWidth="200"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Button x:Name="ChooseSvgMenuItem" ToolTip="Create a new SVG top element and add it's description to the database"
+                        Content="New Top Svg"  Opacity=".8" Margin="4"  
+                        Grid.Row="0" Grid.Column="0"   VerticalAlignment="Center"></Button>
+
+                    <TextBlock Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                            Text="     SvgComposition is a tool to help compose SVG scripts by entering SVG Element and Attribute values. 
+It uses a 'current element' window to edit one SVG element and its attributes at a time. "></TextBlock>
+
+                    <Button   Grid.Row="1" Grid.Column="0"   VerticalAlignment="Center"
+                        Margin="4">Add Child Element</Button>
+                    <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                           Text="     Child elements are added by pressing a button and selecting the kind of child Element. "></TextBlock>
+
+                    <Button   Grid.Row="2" Grid.Column="0"   VerticalAlignment="Center"
+                        Margin="4">Edit Child Element</Button>
+                    <TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                           Text="     Select a child element to edit by pressing the edit child. You will see a list of attributes that you can edit."></TextBlock>
+
+                    <Button   Grid.Row="3" Grid.Column="0"   VerticalAlignment="Center"
+                          Margin="4">Edit Element Text</Button>
+                    <TextBlock Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                           Text="     When an element can have text content, the edit element text button is active. "></TextBlock>
+
+                    <Button   Grid.Row="4" Grid.Column="0"   VerticalAlignment="Center"
+                          Margin="4">Delete Attribute</Button>
+                    <TextBlock Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                           Text="     When the child Element opens delete any unwanted attributes. "></TextBlock>
+
+                    <Button   Grid.Row="5" Grid.Column="0"   VerticalAlignment="Center"
+                          Margin="4">Add Attribute</Button>
+                    <TextBlock Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                           Text="     Then add any that are missing. "></TextBlock>
+
+                    <Button   Grid.Row="6" Grid.Column="0"   VerticalAlignment="Center"
+                          Margin="4">Edit Parent Element</Button>
+                    <TextBlock Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                           Text="     Return to the parent element. "></TextBlock>
+
+                    <Button   Grid.Row="7" Grid.Column="0"   VerticalAlignment="Center"
+                          Margin="4">Remove Child Element</Button>
+                    <TextBlock Grid.Row="7" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                           Text="     Child elements can be deleted from the parent. "></TextBlock>
+
+                    <StackPanel Grid.Row="8" Grid.Column="0">
+                        <Button     VerticalAlignment="Center"
+                          Margin="4">Move Child Up</Button>
+                        <Button      VerticalAlignment="Center"
+                          Margin="4">Move Child Down</Button>
+                    </StackPanel>
+                    <TextBlock Grid.Row="8" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                           Text="     Child elements can change order in the list. "></TextBlock>
+                    <StackPanel Grid.Row="9" Grid.Column="0">
+                        <Button      VerticalAlignment="Center"
+                             Margin="4">Copy Child Element</Button>
+                        <Button    VerticalAlignment="Center"
+                          Margin="4">Paste Child Element</Button>
+                    </StackPanel>
+                    <TextBlock Grid.Row="9" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                           Text="     Child elements can be copied and pasted into another element or SVG, This only works using the buttons shown."></TextBlock>
+
+                    <Button   Grid.Row="10" Grid.Column="0"   VerticalAlignment="Center"
+                          Margin="4">Duplicate Child Element</Button>
+                    <TextBlock Grid.Row="10" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                           Text="     Duplicate Child elements. "></TextBlock>
+
+
+                </Grid>
+
+
+            </ScrollViewer>
+
+            <ScrollViewer x:Name="ExamplesScrollViewer" FontSize="11" Visibility="Collapsed" >
+                <Grid MaxWidth="700" MaxHeight="500" HorizontalAlignment="Left" Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition MaxWidth="700" MinWidth="200"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                        <RowDefinition MinHeight="26" Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Button x:Name="ConformButton"  Grid.Row="0" Grid.Column="0"   VerticalAlignment="Center" Click="ConformButton_OnClick"
+                              Margin="4">Create Example Conform</Button>
+                    <TextBlock Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                               Text="     These buttons add data for SVG scripts to the database so they can be viewed or edited.
+  The first one creates an image filter SVG from an article written by Sara Soueidan."></TextBlock>
+
+                    <Button x:Name="LightSourceButton"  Grid.Row="1" Grid.Column="0"   VerticalAlignment="Center" Click="LightSourceButton_OnClick"
+                            Margin="4">Create Example Lights</Button>
+                    <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                               Text="     This button adds a svg example use of light source filters."></TextBlock>
+
+                    <Button x:Name="TwoSquaresButton"  Grid.Row="2" Grid.Column="0"   VerticalAlignment="Center" Click="TwoSquaresButton_OnClick"
+                            Margin="4">Create Example Two Squares</Button>
+                    <TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                               Text="     This button adds an svg with identical squares and an position offset filter."></TextBlock>
+
+                    <Button x:Name="MarkersButton"  Grid.Row="3" Grid.Column="0"   VerticalAlignment="Center" Click="MarkersButton_OnClick"
+                            Margin="4">Create Example Markers </Button>
+                    <TextBlock Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                               Text="     This button adds a svg that creates an axis and demo data with position markers."></TextBlock>
+
+                    <Button x:Name="PatternButton"  Grid.Row="4" Grid.Column="0"   VerticalAlignment="Center" Click="PatternButton_OnClick"
+                            Margin="4">Create Example Pattern</Button>
+                    <TextBlock Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                               Text="     This button adds a svg that creates a pattern fill."></TextBlock>
+
+                    <Button x:Name="AnimationButton"  Grid.Row="5" Grid.Column="0"   VerticalAlignment="Center" Click="AnimationButton_OnClick"
+                           Margin="4">Create Example Animation</Button>
+                    <TextBlock Grid.Row="5" Grid.Column="1" TextWrapping="Wrap" VerticalAlignment="Center"
+                               Text="     This button adds a svg that creates a simple animation. Chrome Browser to view"></TextBlock>
+                </Grid>
+
+
+            </ScrollViewer>
+        </StackPanel>
+    </GroupBox>
+</UserControl>

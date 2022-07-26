@@ -1,0 +1,313 @@
+﻿<UserControl x:Class="SvgComposition.Controls.SvgLine"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SvgComposition.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+
+    <Expander  Margin="2" Collapsed="Expander_OnCollapsed" Expanded="Expander_OnExpanded">
+        <Expander.Header>
+            <ContentControl>
+
+                <StackPanel Orientation="Horizontal" Margin="3">
+                    <TextBlock Text ="Line " Margin="2,2,1,2"></TextBlock>
+                    <TextBox Text="{Binding Path=SvgElementName}" Margin="3"></TextBox>
+
+                </StackPanel>
+
+            </ContentControl>
+        </Expander.Header>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <!-- x1 -->
+                <ContentControl>
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock  Text="X1" Margin="3" Grid.Row="0" Grid.Column="0" 
+                                        MinWidth="{Binding ShadowSettingsLabelWidth, Mode=OneWay}"></TextBlock>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+                            <TextBox  x:Name="LineX1Box" Margin="3" Width="50" 
+                                          Text="{Binding Path=LineX1, Mode=TwoWay}">
+                            </TextBox>
+
+                        </StackPanel>
+                        <Button x:Name="DeleteLineX1" Content="x" Height="25" Width="15" FontWeight="ExtraBold" Grid.Row="0" Grid.Column="2"
+                                    Click="DeleteLineX1_OnClick"
+                                   >
+                        </Button>
+
+                    </Grid>
+                </ContentControl>
+                <!-- y1 -->
+                <ContentControl>
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock  Text="Y1" Margin="3" Grid.Row="0" Grid.Column="0" 
+                                        MinWidth="{Binding ShadowSettingsLabelWidth, Mode=OneWay}"></TextBlock>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+                            <TextBox  x:Name="LineY1Box" Margin="3" Width="50" 
+                                          Text="{Binding Path=LineY1, Mode=TwoWay}">
+                            </TextBox>
+
+                        </StackPanel>
+                        <Button x:Name="DeleteLineY1" Content="x" Height="25" Width="15" FontWeight="ExtraBold" Grid.Row="0" Grid.Column="2"
+                                    Click="DeleteLineY1_OnClick"
+                            >
+                        </Button>
+
+                    </Grid>
+                </ContentControl>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="3">
+                <!-- x2 -->
+                <ContentControl>
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock  Text="X2" Margin="3" Grid.Row="0" Grid.Column="0" 
+                                        MinWidth="{Binding ShadowSettingsLabelWidth, Mode=OneWay}"></TextBlock>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+                            <TextBox  x:Name="LineX2Box" Margin="3" Width="50" 
+                                          Text="{Binding Path=LineX2, Mode=TwoWay}">
+                            </TextBox>
+
+                        </StackPanel>
+                        <Button x:Name="DeleteLineX2" Content="x" Height="25" Width="15" FontWeight="ExtraBold" Grid.Row="0" Grid.Column="2"
+                                    Click="DeleteLineX2_OnClick"
+                                     >
+                        </Button>
+
+                    </Grid>
+                </ContentControl>
+                <!--y2-->
+                <ContentControl>
+                    <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                            <ColumnDefinition Width="10*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock  Text="Y2" Margin="3" Grid.Row="0" Grid.Column="0" 
+                                       ></TextBlock>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+                            <TextBox  x:Name="LineY2Box" Margin="3" Width="50" 
+                                          Text="{Binding Path=LineX2, Mode=TwoWay}">
+                            </TextBox>
+
+                        </StackPanel>
+                        <Button x:Name="DeleteLineY2"  Content="x" Height="25" Width="15" FontWeight="ExtraBold" Grid.Row="0" Grid.Column="2"
+                                    Click="DeleteLineY2_OnClick"
+                                    Tag="LineX2" >
+                        </Button>
+
+                    </Grid>
+                </ContentControl>
+            </StackPanel>
+            <!--Line Cap-->
+            <ContentControl>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="10*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock  Text="Line-Cap" Margin="3" Grid.Row="0" Grid.Column="0" 
+                                        ></TextBlock>
+                    <ComboBox x:Name="LineCapBox"  SelectionChanged="LineCapBox_OnSelectionChanged"
+                              Width="120"  Margin="3"  Grid.Row="0" Grid.Column="1"
+                              SelectedIndex="0" >
+
+                        <ComboBox.Items>
+                            <TextBlock Text="butt"></TextBlock>
+                            <TextBlock Text="round"></TextBlock>
+                            <TextBlock Text="square"></TextBlock>
+                            
+                        </ComboBox.Items>
+                    </ComboBox>
+
+        
+                    <Button x:Name="DeleteLineCap"  Content="x" Height="25" Width="15" FontWeight="ExtraBold" Grid.Row="0" Grid.Column="2"
+                                    Click="DeleteLine_Cap_OnClick"
+                                     >
+                    </Button>
+
+                </Grid>
+            </ContentControl>
+
+            <!--Stroke Width-->
+            <ContentControl>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="10*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock  Text="Stroke Width" Margin="3" Grid.Row="0" Grid.Column="0" 
+                                        ></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+                        <TextBox  x:Name="StrokeWidthBox" Margin="3" Width="50" 
+                                          Text="{Binding Path=StrokeWidth, Mode=TwoWay}">
+                        </TextBox>
+
+                    </StackPanel>
+                    <Button x:Name="DeleteStrokeWidth"  Content="x" Height="25" Width="15" FontWeight="ExtraBold" Grid.Row="0" Grid.Column="2"
+                                    Click="DeleteStrokeWidth_OnClick"
+                            >
+                    </Button>
+
+                </Grid>
+            </ContentControl>
+            <!--StrokeDash-->
+            <ContentControl>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="10*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock  Text="Stroke Dash Array" Margin="3" Grid.Row="0" Grid.Column="0" 
+                                       ></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+                        <TextBox  x:Name="StrokDashBox" Margin="3" Width="50" 
+                                          Text="{Binding Path=StrokeDashArray, Mode=TwoWay}">
+                        </TextBox>
+
+                    </StackPanel>
+                    <Button x:Name="DeleteStrokeDashArray"  Content="x" Height="25" Width="15" FontWeight="ExtraBold" Grid.Row="0" Grid.Column="2"
+                                    Click="DeleteStrokeDashArray_OnClick"
+                            >
+                    </Button>
+
+                </Grid>
+            </ContentControl>
+            <!--Stroke-->
+            <ContentControl>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="10*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+                        <local:ColorButton x:Name="StrokeButton"  Width="120" IsEnabled="False" ></local:ColorButton>
+
+
+                    </StackPanel>
+
+
+                </Grid>
+            </ContentControl>
+            <!--stroke-opacity -->
+            <ContentControl>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="10*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock  Text="stroke-opacity" Margin="3" Grid.Row="0" Grid.Column="0" 
+                    ></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+                        <TextBox  x:Name="StrokeOpacityBox" Margin="3" Width="50" 
+                                  Text="{Binding Path=StrokeOpacity, Mode=TwoWay}">
+                        </TextBox>
+                        <local:TypeSelector x:Name="StrokeOpacityType" ></local:TypeSelector>
+                    </StackPanel>
+
+
+
+                </Grid>
+            </ContentControl>
+            <!--fill-opacity -->
+            <ContentControl>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"></ColumnDefinition>
+                        <ColumnDefinition Width="10*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock  Text="fill-opacity" Margin="3" Grid.Row="0" Grid.Column="0" 
+                    ></TextBlock>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" >
+                        <TextBox  x:Name="FillOpacityBox" Margin="3" Width="50" 
+                                  Text="{Binding Path=FillOpacity, Mode=TwoWay}">
+                        </TextBox>
+                        <local:TypeSelector x:Name="FillOpacityType" ></local:TypeSelector>
+                    </StackPanel>
+
+
+
+                </Grid>
+            </ContentControl>
+            <Border BorderBrush="Black" BorderThickness="2">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <Button x:Name="ChooseLineButton"  Click="ChooseLineButton_OnClick" Margin="3">Choose</Button>
+                        <Button x:Name="CreateLineButton"  Click="CreateLineButton_OnClick" Margin="3">Create</Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="3">
+                        <Button x:Name="SaveLineButton"  Click="SaveLineButton_OnClick"  Margin="3">Save</Button>
+                        <Button x:Name="RemoveLineButton"  Click="RemoveLineButton_OnClick"  Margin="3">Delete</Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Expander>
+
+
+</UserControl>

@@ -1,0 +1,259 @@
+﻿<UserControl x:Class="SvgComposition.AttributeControls.ValueOptAttributes.SvgPatha"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SvgComposition.AttributeControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" FontSize="9">
+    <Expander Margin="2" >
+        <Expander.Header>
+            <ContentControl>
+                <TextBlock x:Name="LabelBlock" Margin="2,3,3,2" FontSize="10" Width="100" 
+                           Text="{Binding Path=LabelText, Mode=OneWay}"
+                           Foreground="MidnightBlue" >
+                    <TextBlock.ToolTip>
+                        <TextBlock Text="The svg path attribute" Foreground="DarkGreen" FontSize="9" Margin="1"></TextBlock>
+                    </TextBlock.ToolTip>
+                </TextBlock>
+            </ContentControl>
+        </Expander.Header>
+        <ScrollViewer  VerticalScrollBarVisibility="Auto" >
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+              
+
+            </Grid.ColumnDefinitions>
+           
+                <TextBox x:Name="SvgAttributeBlock" Margin="2,3,3,2" FontSize="9" Width="300"   TextWrapping="Wrap" 
+                         Text="{Binding Path=SvgAttributeCurrentValue, Mode=TwoWay}"
+                         MinHeight="360" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0"
+                         Foreground="Black"  >
+                    <TextBox.ToolTip>
+                        <TextBlock Text="The path string values" Foreground="DarkGreen" FontSize="9" Margin="1"></TextBlock>
+                    </TextBox.ToolTip>
+                </TextBox>
+       
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                    <GroupBox Grid.Column="0" Grid.Row="0">
+                        <StackPanel Orientation="Horizontal">
+                           <Button x:Name="MoveM" Width="28" Background="Aquamarine" Content="+" Click="MoveM_OnClick"></Button>
+                           <TextBlock Text="M" Margin="2,0,0,2" ></TextBlock>
+                            <TextBox x:Name="BoxMx" Width="26"></TextBox>
+                            <TextBox x:Name="BoxMy"  Width="26"></TextBox>
+                        </StackPanel>
+                    </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="Movem" Width="28" Background="Aquamarine" Content="+" Click="Movem_OnClick"></Button>
+                        <TextBlock Text="m" Margin="2,0,0,2"  ></TextBlock>
+                        <TextBox x:Name="Boxmx" Width="26"></TextBox>
+                        <TextBox x:Name="Boxmy"  Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="2">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MoveL" Width="28" Background="Aquamarine" Content="+" Click="MoveL_OnClick"></Button>
+                        <TextBlock Text="L" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="BoxLx" Width="26"></TextBox>
+                        <TextBox x:Name="BoxLy"  Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="3">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="Movel" Width="28" Background="Aquamarine" Content="+" Click="Movel_OnClick"></Button>
+                        <TextBlock Text="l" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="Boxlx" Width="26"></TextBox>
+                        <TextBox x:Name="Boxly"  Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="4">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MoveH" Width="28" Background="Aquamarine" Content="+" Click="MoveH_OnClick"></Button>
+                        <TextBlock Text="H" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="BoxH" Width="26"></TextBox>
+
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="Moveh" Width="28" Background="Aquamarine" Content="+" Click="Moveh_OnClick"></Button>
+                        <TextBlock Text="h" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="Boxh" Width="26"></TextBox>
+
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="6">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MoveV" Width="28" Background="Aquamarine" Content="+" Click="MoveV_OnClick"></Button>
+                        <TextBlock Text="V" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="BoxV" Width="26"></TextBox>
+
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="7">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="Movev" Width="28" Background="Aquamarine" Content="+" Click="Movev_OnClick"></Button>
+                        <TextBlock Text="v" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="Boxv" Width="26"></TextBox>
+
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="8">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MoveC" Width="28" Background="Aquamarine" Content="+" Click="MoveC_OnClick"></Button>
+                        <TextBlock Text="C" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="BoxCx1" Width="26"></TextBox>
+                        <TextBox x:Name="BoxCy1" Width="26"></TextBox>
+                        <TextBox x:Name="BoxCx2" Width="26"></TextBox>
+                        <TextBox x:Name="BoxCy2" Width="26"></TextBox>
+                        <TextBox x:Name="BoxCx" Width="26"></TextBox>
+                        <TextBox x:Name="BoxCy" Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="9">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="Movec" Width="28" Background="Aquamarine" Content="+" Click="Movec_OnClick"></Button>
+                        <TextBlock Text="c" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="Boxcx1" Width="26"></TextBox>
+                        <TextBox x:Name="Boxcy1" Width="26"></TextBox>
+                        <TextBox x:Name="Boxcx2" Width="26"></TextBox>
+                        <TextBox x:Name="Boxcy2" Width="26"></TextBox>
+                        <TextBox x:Name="Boxcx" Width="26"></TextBox>
+                        <TextBox x:Name="Boxcy" Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="10">
+                    <StackPanel Orientation="Horizontal">
+                            <Button x:Name="MoveS" Width="28" Background="Aquamarine" Content="+" Click="MoveS_OnClick"></Button>
+                        <TextBlock Text="S" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="BoxSx1" Width="26"></TextBox>
+                        <TextBox x:Name="BoxSy1" Width="26"></TextBox>
+                        <TextBox x:Name="BoxSx" Width="26"></TextBox>
+                        <TextBox x:Name="BoxSy" Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="11">
+                    <StackPanel Orientation="Horizontal">
+                            <Button x:Name="Moves" Width="28" Background="Aquamarine" Content="+" Click="Moves_OnClick"></Button>
+                        <TextBlock Text="s" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="Boxsx1" Width="26"></TextBox>
+                        <TextBox x:Name="Boxsy1" Width="26"></TextBox>
+                        <TextBox x:Name="Boxsx" Width="26"></TextBox>
+                        <TextBox x:Name="Boxsy" Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="12">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MoveQ" Width="28" Background="Aquamarine" Content="+" Click="MoveQ_OnClick"></Button>
+                        <TextBlock Text="Q" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="BoxQx1" Width="26"></TextBox>
+                        <TextBox x:Name="BoxQy1" Width="26"></TextBox>
+                        <TextBox x:Name="BoxQx" Width="26"></TextBox>
+                        <TextBox x:Name="BoxQy" Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="13">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="Moveq" Width="28" Background="Aquamarine" Content="+" Click="Moveq_OnClick"></Button>
+                        <TextBlock Text="q" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="Boxqx1" Width="26"></TextBox>
+                        <TextBox x:Name="Boxqy1" Width="26"></TextBox>
+                        <TextBox x:Name="Boxqx" Width="26"></TextBox>
+                        <TextBox x:Name="Boxqy" Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="14">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MoveT" Width="28" Background="Aquamarine" Content="+" Click="MoveT_OnClick"></Button>
+                        <TextBlock Text="T" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="BoxTx" Width="26"></TextBox>
+                        <TextBox x:Name="BoxTy" Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="15">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="Movet" Width="28" Background="Aquamarine" Content="+" Click="Movet_OnClick"></Button>
+                        <TextBlock Text="t" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="Boxtx" Width="26"></TextBox>
+                        <TextBox x:Name="Boxty" Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="16">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MoveA" Width="28" Background="Aquamarine" Content="+" Click="MoveA_OnClick"></Button>
+                        <TextBlock Text="A" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="BoxArx" Width="26"></TextBox>
+                        <TextBox x:Name="BoxAry" Width="26"></TextBox>
+                        <TextBox x:Name="BoxAA" Width="26"></TextBox>
+                        <TextBox x:Name="BoxAf1" Width="26"></TextBox>
+                        <TextBox x:Name="BoxAf2" Width="26"></TextBox>
+                        <TextBox x:Name="BoxAx" Width="26"></TextBox>
+                        <TextBox x:Name="BoxAy" Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="17">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="Movea" Width="28" Background="Aquamarine" Content="+" Click="Movea_OnClick"></Button>
+                        <TextBlock Text="a" Margin="2,0,0,2" ></TextBlock>
+                        <TextBox x:Name="Boxarx" Width="26"></TextBox>
+                        <TextBox x:Name="Boxary" Width="26"></TextBox>
+                        <TextBox x:Name="BoxaA" Width="26"></TextBox>
+                        <TextBox x:Name="Boxaf1" Width="26"></TextBox>
+                        <TextBox x:Name="Boxaf2" Width="26"></TextBox>
+                        <TextBox x:Name="Boxax" Width="26"></TextBox>
+                        <TextBox x:Name="Boxay" Width="26"></TextBox>
+                        </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="18">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="MoveZ" Width="28" Background="Aquamarine" Content="+" Click="MoveZ_OnClick"></Button>
+                        <TextBlock Text="Z" Margin="2,0,0,2" ></TextBlock>
+                      
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox Grid.Column="0" Grid.Row="19">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="Movez" Width="28" Background="Aquamarine" Content="+" Click="Movez_OnClick"></Button>
+                        <TextBlock Text="z" Margin="2,0,0,2" ></TextBlock>
+                      
+                    </StackPanel>
+                </GroupBox>
+
+                  
+                </Grid>
+        </Grid>
+        </ScrollViewer>
+</Expander>
+</UserControl>

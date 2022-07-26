@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="SvgComposition.AttributeControls.ValueAttributes.SvgBegin"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SvgComposition.AttributeControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <GroupBox Margin="2" >
+        <GroupBox.Header>
+            <ContentControl>
+                <TextBlock x:Name="LabelBlock" Margin="2,3,3,2" FontSize="10" Width="100" 
+                           Text="{Binding Path=LabelText, Mode=OneWay}"
+                           Foreground="MidnightBlue" >
+                    <TextBlock.ToolTip>
+                        <TextBlock Text="svg begin" Foreground="DarkGreen" FontSize="9" Margin="1"></TextBlock>
+                    </TextBlock.ToolTip>
+                </TextBlock>
+            </ContentControl>
+        </GroupBox.Header>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="SvgAttributeBlock" Margin="2,3,3,2" FontSize="9" Width="500"
+                     Text="{Binding Path=SvgAttributeCurrentValue, Mode=TwoWay}"  Height="26" VerticalAlignment="Top"
+                     Foreground="Black"  Grid.Column="0" Grid.Row="0">
+                <TextBox.ToolTip>
+                    <StackPanel>
+                   
+                        <TextBlock  Foreground="DarkGreen"  TextWrapping="Wrap" FontSize="9" Margin="1"
+                                    Text="begin can be one of the following:" >
+                        </TextBlock>
+                        <TextBlock  Foreground="DarkGreen"  TextWrapping="Wrap" FontSize="9" Margin="1"
+                                    Text="offset-value : This is a clock-value from the start. It can be negative (-4s)" >
+                        </TextBlock>
+                        <TextBlock  Foreground="DarkGreen"  TextWrapping="Wrap" FontSize="9" Margin="1"
+                                    Text="syncbase-value : This is the id of another animation a dot and the words begin or end.  (showA.begin)" >
+                        </TextBlock>
+                        <TextBlock  Foreground="DarkGreen"  TextWrapping="Wrap" FontSize="9" Margin="1"
+                                    Text="event-value : This is the id of an element an event name focus, blur, focusin, 
+focusout, activate, auxclick, click, dblclick, mousedown, mouseenter, mouseleave, mousemove, mouseout, mouseover, mouseup, 
+wheel, beforeinput, input, keydown, keyup, compositionstart, compositionupdate, compositionend, load, unload, abort, error, 
+select, resize, scroll, beginEvent, endEvent, and repeatEvent and  a positive or negative clock-value. (text1.click 3s)"  >
+                        </TextBlock>
+                        <TextBlock  Foreground="DarkGreen"  TextWrapping="Wrap" FontSize="9" Margin="1"
+                                    Text="repeat-value : an element id then a dot then repeat(count) then a positive or negative clock-value. Text1.repeat(7) 5s" >
+                        </TextBlock>
+                        <TextBlock  Foreground="DarkGreen"  TextWrapping="Wrap" FontSize="9" Margin="1"
+                                    Text="accessKey-value :  the function accessKey() with the character to be input as parameter and a positive or negative clock-value. accessKey(x)7s" >
+                        </TextBlock>
+                        <TextBlock  Foreground="DarkGreen"  TextWrapping="Wrap" FontSize="9" Margin="1"
+                                    Text=" wallclock-sync-value :  the function wallclock(time-value)" >
+                        </TextBlock>
+                        <TextBlock  Foreground="DarkGreen"  TextWrapping="Wrap" FontSize="9" Margin="1"
+                                    Text="the keyword indefinite" >
+                        </TextBlock>
+
+                    </StackPanel>
+                </TextBox.ToolTip>
+            </TextBox>
+
+        </Grid>
+    </GroupBox>
+</UserControl>

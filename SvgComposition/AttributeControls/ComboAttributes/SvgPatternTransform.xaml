@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="SvgComposition.AttributeControls.ComboAttributes.SvgPatternTransform"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SvgComposition.AttributeControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <GroupBox Margin="2" >
+        <GroupBox.Header>
+            <ContentControl>
+                <TextBlock x:Name="LabelBlock" Margin="2,3,3,2" FontSize="10" Width="100" 
+                           Text="{Binding Path=LabelText, Mode=OneWay}"
+                           Foreground="MidnightBlue" >
+                    <TextBlock.ToolTip>
+                        <TextBlock x:Name="AtthTip"  Text="The svg dur" Foreground="DarkGreen" FontSize="9" Margin="1"></TextBlock>
+                    </TextBlock.ToolTip>
+                </TextBlock>
+            </ContentControl>
+        </GroupBox.Header>
+
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"></ColumnDefinition>
+               
+
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                <Button x:Name="UpdateButton" Content="Update" Margin="2" Background="Aquamarine" Width="50" FontSize="9" Click="UpdateButton_OnClick"
+                        HorizontalAlignment="Left"></Button>
+                <TextBlock x:Name="SvgAttributeBlock" Margin="2,3,3,2" FontSize="9" Width="400"
+                     Text="{Binding Path=SvgAttributeCurrentValue, Mode=TwoWay}"  Height="26" VerticalAlignment="Top" 
+                     Foreground="Black">
+                <TextBlock.ToolTip>
+                    <StackPanel    Margin="1">
+                        <TextBlock x:Name="AttvTip" Text="" Foreground="DarkGreen" FontSize="9" />
+                    </StackPanel>
+                </TextBlock.ToolTip>
+            </TextBlock>
+            </StackPanel>
+
+            <Expander x:Name="MatrixExpander" Grid.Column="0" Grid.Row="1" >
+                <Expander.Header>
+                    <ContentControl>
+                        <TextBlock Text="matrix(a,b,c,d,e,f)"></TextBlock>
+                    </ContentControl>
+                </Expander.Header>
+                <StackPanel x:Name="MatrixCoifPanel" HorizontalAlignment="Left" Orientation="Horizontal">
+                    <TextBox Width="38" Text=" " Margin="2,1,1,2"></TextBox>
+                    <TextBox Width="38" Text=" " Margin="2,1,1,2"></TextBox>
+                    <TextBox Width="38" Text=" " Margin="2,1,1,2"></TextBox>
+                    <TextBox Width="38" Text=" " Margin="2,1,1,2"></TextBox>
+                    <TextBox Width="38" Text=" " Margin="2,1,1,2"></TextBox>
+                    <TextBox Width="38" Text=" " Margin="2,1,1,2"></TextBox>
+                </StackPanel>
+            </Expander>
+            <Expander Grid.Column="0" Grid.Row="2" >
+                <Expander.Header>
+                    <ContentControl>
+                        <TextBlock Text="translate(x, y)"></TextBlock>
+                    </ContentControl>
+                </Expander.Header>
+                <StackPanel x:Name="TranslateCoifPanel" HorizontalAlignment="Left" Orientation="Horizontal">
+                    <TextBox Width="38" Margin="2,1,1,2"></TextBox>
+                    <TextBox Width="38" Margin="2,1,1,2"></TextBox>
+                   
+                </StackPanel>
+            </Expander>
+            <Expander Grid.Column="0" Grid.Row="3" >
+                <Expander.Header>
+                    <ContentControl>
+                        <TextBlock Text="scale(x, y)"></TextBlock>
+                    </ContentControl>
+
+                </Expander.Header>
+                <StackPanel x:Name="ScaleCoifPanel" HorizontalAlignment="Left" Orientation="Horizontal">
+                    <TextBox Width="38" Margin="2,1,1,2"></TextBox>
+                    <TextBox Width="38" Margin="2,1,1,2"></TextBox>
+
+                </StackPanel>
+            </Expander>
+            <Expander Grid.Column="0" Grid.Row="4" >
+                <Expander.Header>
+                    <ContentControl>
+                        <TextBlock Text="rotate(angle, x, y)"></TextBlock>
+                    </ContentControl>
+                </Expander.Header>
+                <StackPanel x:Name="RotateCoifPanel" HorizontalAlignment="Left" Orientation="Horizontal">
+                    <TextBox Width="38" Margin="2,1,1,2"></TextBox>
+                    <TextBox Width="38" Margin="2,1,1,2"></TextBox>
+                    <TextBox Width="38" Margin="2,1,1,2"></TextBox>
+                </StackPanel>
+            </Expander>
+            <Expander Grid.Column="0" Grid.Row="5" >
+                <Expander.Header>
+                    <ContentControl>
+                        <TextBlock Text="skewX(angle)"></TextBlock>
+                    </ContentControl>
+                </Expander.Header>
+                <StackPanel x:Name="SkewXCoifPanel" HorizontalAlignment="Left" Orientation="Horizontal">
+                    <TextBox Width="38" Margin="2,1,1,2"></TextBox>
+                </StackPanel>
+            </Expander>
+            <Expander Grid.Column="0" Grid.Row="6" >
+                <Expander.Header>
+                    <ContentControl>
+                        <TextBlock Text="skewY(angle)"></TextBlock>
+                    </ContentControl>
+                </Expander.Header>
+                <StackPanel x:Name="SkewYCoifPanel" HorizontalAlignment="Left" Orientation="Horizontal">
+                    <TextBox Width="38" Margin="2,1,1,2"></TextBox>
+                   
+                </StackPanel>
+            </Expander>
+        </Grid>
+       
+
+    </GroupBox>
+</UserControl>

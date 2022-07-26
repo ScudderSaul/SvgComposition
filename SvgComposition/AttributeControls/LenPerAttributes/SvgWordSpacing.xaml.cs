@@ -1,0 +1,202 @@
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows;
+using System.Windows.Controls;
+using SvgComposition.Controls;
+using SvgComposition.Model;
+
+namespace SvgComposition.AttributeControls.LenPerAttributes
+{
+    /// <summary>
+    /// Interaction logic for SvgWordSpacing.xaml
+    /// </summary>
+    public partial class SvgWordSpacing : UserControl, ISvgAttributeControl, INotifyPropertyChanged
+    {
+        #region fields
+        private string _svgAttributeOriginalValue;
+        private string _svgAttributeLocalValue;
+        private string _labelText;
+        private string _lenperLocalUnit;
+
+       
+
+      
+
+        #endregion
+
+        public SvgWordSpacing()
+        {
+            InitializeComponent();
+            DataContext = this;
+            LabelText = "word-spacing";
+            AtthTip.Text = $"The '{LabelText}' attribute";
+            AttvTip.Text = $"The '{LabelText}' attribute value";
+        }
+
+        public static readonly DependencyProperty IsLabelTextProperty =
+            DependencyProperty.Register(
+                "IsLabelText",
+                typeof(string),
+                typeof(SvgWordSpacing), new FrameworkPropertyMetadata("none",
+                    FrameworkPropertyMetadataOptions.AffectsRender,
+                    null)
+            );
+
+        public string LabelText
+        {
+            get { return (string)GetValue(IsLabelTextProperty); }
+            set
+            {
+                SetValue(IsLabelTextProperty, value);
+                _labelText = value;
+                OnPropertyChanged("LabelText");
+            }
+        }
+
+        public static readonly DependencyProperty SvgAttributeCurrentValueProperty =
+            DependencyProperty.Register(
+                "SvgAttributeCurrentValue",
+                typeof(string),
+                typeof(SvgWordSpacing), new FrameworkPropertyMetadata("none",
+                    FrameworkPropertyMetadataOptions.AffectsRender,
+                    null) 
+            );
+
+       
+
+        public string SvgAttributeCurrentValue
+        {
+            get { return (string)GetValue(SvgAttributeCurrentValueProperty); }
+            set
+            {
+                SetValue(SvgAttributeCurrentValueProperty, value);
+                _svgAttributeLocalValue = value;
+                OnPropertyChanged("SvgAttributeCurrentValue");
+            }
+        }
+
+
+        public static readonly DependencyProperty IsLenperCurrentUnitProperty =
+            DependencyProperty.Register(
+                "IsLenperCurrentUnit",
+                typeof(string),
+                typeof(SvgWordSpacing), new FrameworkPropertyMetadata("none",
+                    FrameworkPropertyMetadataOptions.AffectsRender,
+                    null)
+            );
+
+        public string LenperCurrentUnit
+        {
+            get { return (string)GetValue(IsLenperCurrentUnitProperty); }
+            set
+            {
+                SetValue(IsLenperCurrentUnitProperty, value);
+                _lenperLocalUnit = value;
+              
+            }
+        }
+
+        public bool CanAnimate { get; set; } = true;
+       
+
+        #region methods
+
+        public SvgAttribute Create(ref SvgElement ele)
+        {
+            SvgAttribute at = new SvgAttribute();
+            at.Id = SvgAttributeCreator.FindNextSvgAttributeId();
+            at.AttributeType = SvgAttributeType.LengthPercent;
+            at.AttributeValue = "0";
+            at.AttributeName = _labelText;
+            at.SvgUnit = "";
+            at.SvgElement = ele;
+            at.SvgElementId = ele.Id;
+            ele.SvgAttributes.Add(at);
+            SvgCompositionControl.Context.SvgAttributes.Add(at);
+            SvgCompositionControl.Context.SaveChanges();
+            Load(at);  
+            return (at);
+        }
+
+        public void Load(SvgAttribute at)
+        {
+           
+            SvgAttributeCurrentValue = SvgAttributeBlock.Text =  at.AttributeValue;
+
+            if (at.AttributeType == SvgAttributeType.Text)
+            {
+                NormalCheckBox.IsChecked = true;
+            }
+            else
+            {
+                SvgAttributeBlock.IsReadOnly = false;
+                at.AttributeType = SvgAttributeType.LengthPercent;
+                LenperCurrentUnit = SvgUnitBlock.Text = at.SvgUnit;
+                NormalCheckBox.IsChecked = false;
+            }
+
+        }
+
+        public void Save(SvgAttribute at)
+        {
+            if (NormalCheckBox.IsChecked == true)
+            {
+                at.AttributeValue = SvgAttributeCurrentValue = SvgAttributeBlock.Text;
+                at.AttributeType = SvgAttributeType.Text;
+            }
+            else
+            {
+                at.AttributeValue = SvgAttributeCurrentValue = SvgAttributeBlock.Text; ;
+                at.AttributeType = SvgAttributeType.LengthPercent;
+                at.SvgUnit = LenperCurrentUnit = SvgUnitBlock.Text;
+             
+            }
+
+            SvgCompositionControl.Context.SaveChanges();
+        }
+
+        #endregion
+
+        #region events
+
+
+
+
+
+
+        private void LenPerUnitComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem lbi = ((sender as ComboBox).SelectedItem as ComboBoxItem);
+            LenperCurrentUnit = SvgUnitBlock.Text = lbi.Content.ToString();
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void NormalCheckBox_OnUnchecked(object sender, RoutedEventArgs e)
+        {
+            LenPerUnitComboBox.Visibility = Visibility.Visible;
+            SvgAttributeCurrentValue = SvgAttributeBlock.Text = " ";
+            LenperCurrentUnit = SvgUnitBlock.Text = " ";
+        }
+
+        private void NormalCheckBox_OnChecked(object sender, RoutedEventArgs e)
+        {
+            SvgAttributeCurrentValue = SvgAttributeBlock.Text = "normal";
+            LenperCurrentUnit = SvgUnitBlock.Text = " ";
+            LenPerUnitComboBox.Visibility = Visibility.Collapsed;
+        }
+
+
+        #endregion
+
+
+
+    }
+}

@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="SvgComposition.AttributeControls.ComboAttributes.SvgFontVariant"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SvgComposition.AttributeControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <GroupBox Margin="2" >
+        <GroupBox.Header>
+            <ContentControl>
+                <TextBlock x:Name="LabelBlock" Margin="2,3,3,2" FontSize="10" Width="100" 
+                           Text="{Binding Path=LabelText, Mode=OneWay}"
+                           Foreground="MidnightBlue" >
+                    <TextBlock.ToolTip>
+                        <TextBlock x:Name="AtthTip"  Text="The svg dur" Foreground="DarkGreen" FontSize="9" Margin="1"></TextBlock>
+                    </TextBlock.ToolTip>
+                </TextBlock>
+            </ContentControl>
+        </GroupBox.Header>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110"></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="90"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <CheckBox x:Name="SelectCheckBox"  Checked="SelectCheckBox_OnChecked" Unchecked="SelectCheckBox_OnUnchecked"
+                      Grid.Column="0" Grid.Row="0" >
+                <StackPanel>
+                    <TextBlock FontSize="8"  Text="Check to select"></TextBlock>
+                    <TextBlock FontSize="8" Text="Uncheck to enter"></TextBlock>
+                </StackPanel>
+            </CheckBox>
+            <TextBox x:Name="SvgAttributeBlock" Margin="2,3,3,2" FontSize="9" Width="200"
+                     Text="{Binding Path=SvgAttributeCurrentValue, Mode=TwoWay}"  Height="26" VerticalAlignment="Top" 
+                     Foreground="Black"  Grid.Column="1" Grid.Row="0">
+                <TextBox.ToolTip>
+                    <StackPanel    Margin="1">
+                        <TextBlock x:Name="AttvTip" Text="" Foreground="DarkGreen" FontSize="9" />
+                       
+
+                    </StackPanel>
+                </TextBox.ToolTip>
+            </TextBox>
+
+            <ComboBox x:Name="SelectionComboBox" Background="Honeydew"  
+                      Width="90" Margin="2,3,3,2" Grid.Column="2" Grid.Row="0"
+                      IsEditable="true" Visibility="Visible" SelectionChanged="SelectionComboBox_OnSelectionChanged"
+                      IsReadOnly="true">
+                <ComboBox.ToolTip>
+                    <StackPanel>
+                        <TextBlock x:Name="SelTip" Text=""></TextBlock>
+                    </StackPanel>
+                </ComboBox.ToolTip>
+                <ComboBoxItem>normal</ComboBoxItem>
+                <ComboBoxItem>none</ComboBoxItem>
+                <ComboBoxItem>small-caps</ComboBoxItem>
+                <ComboBoxItem>all-small-caps</ComboBoxItem>
+                <ComboBoxItem>petite-caps</ComboBoxItem>
+                <ComboBoxItem>all-petite-caps"</ComboBoxItem>
+                <ComboBoxItem>unicase</ComboBoxItem>
+                <ComboBoxItem>titling-caps</ComboBoxItem>
+                <ComboBoxItem>inherit</ComboBoxItem>
+            </ComboBox>
+
+        </Grid>
+        </GroupBox>
+</UserControl>

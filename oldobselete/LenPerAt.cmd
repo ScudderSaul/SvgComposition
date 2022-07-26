@@ -1,0 +1,27 @@
+rem lenper
+rem copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml SvgComposition\AttributeControls\LenPerAttributesN\Svg
+rem copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml.cs SvgComposition\AttributeControls\LenPerAttributesN\Svg
+
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml SvgComposition\AttributeControls\LenPerAttributesN\SvgFr.xaml
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml.cs SvgComposition\AttributeControls\LenPerAttributesN\SvgFr.xaml.cs
+
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml SvgComposition\AttributeControls\LenPerAttributesN\SvgFx.xaml
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml.cs SvgComposition\AttributeControls\LenPerAttributesN\SvgFx.xaml.cs
+
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml SvgComposition\AttributeControls\LenPerAttributesN\SvgFy.xaml
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml.cs SvgComposition\AttributeControls\LenPerAttributesN\SvgFy.xaml.cs
+
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml SvgComposition\AttributeControls\LenPerAttributesN\SvgMarkerHeight.xaml
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml.cs SvgComposition\AttributeControls\LenPerAttributesN\SvgMarkerHeight.xaml.cs
+
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml SvgComposition\AttributeControls\LenPerAttributesN\SvgMarkerWidth.xaml
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml.cs SvgComposition\AttributeControls\LenPerAttributesN\SvgMarkerWidth.xaml.cs
+
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml SvgComposition\AttributeControls\LenPerAttributesN\SvgStrokeDashoffset.xaml
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml.cs SvgComposition\AttributeControls\LenPerAttributesN\SvgStrokeDashoffset.xaml.cs
+
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml SvgComposition\AttributeControls\LenPerAttributesN\SvgTextLength.xaml
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml.cs SvgComposition\AttributeControls\LenPerAttributesN\SvgTextLength.xaml.cs
+
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml SvgComposition\AttributeControls\LenPerAttributesN\SvgWordSpacing.xaml
+copy SvgComposition\AttributeControls\LenPerAttributes\SvgCx.xaml.cs SvgComposition\AttributeControls\LenPerAttributesN\SvgWordSpacing.xaml.cs

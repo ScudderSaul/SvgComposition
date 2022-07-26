@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="SvgComposition.AttributeControls.ValueAttributes.SvgValues"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SvgComposition.AttributeControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Expander Margin="2" >
+        <Expander.Header>
+            <ContentControl>
+                <TextBlock x:Name="LabelBlock" Margin="2,3,3,2" FontSize="10" Width="100" 
+                           Text="{Binding Path=LabelText, Mode=OneWay}"
+                           Foreground="MidnightBlue" >
+                    <TextBlock.ToolTip>
+                        <TextBlock Text="The values Attribute" Foreground="DarkGreen" FontSize="9" Margin="1"></TextBlock>
+                    </TextBlock.ToolTip>
+                </TextBlock>
+            </ContentControl>
+        </Expander.Header>
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+
+
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="SvgAttributeBlock" Margin="2,3,3,2" FontSize="9" Width="300" Height="200"
+                     Text="{Binding Path=SvgAttributeCurrentValue, Mode=TwoWay}"  TextWrapping="Wrap" VerticalAlignment="Top"
+                     Foreground="Black"  Grid.Column="0" Grid.Row="0">
+                <TextBox.ToolTip>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="The values attribute depends upon the context where it's used.
+                        For animation elements, it is a semicolon-separated list of one or more values. " 
+                        Foreground="DarkGreen" FontSize="9" Margin="1" TextWrapping="Wrap">
+                        </TextBlock>
+                        <TextBlock Text="When a list of values is specified, from, to, and by attribute values are ignored." 
+                            Foreground="DarkGreen" FontSize="9" Margin="1" TextWrapping="Wrap">
+                        </TextBlock>
+                        <TextBlock 
+                            Text="For feColorMatrix, the contents of values depends on the attribute 'type'
+                        For type=matrix, values is a list of 20 matrix values, separated by whitespace and/or a comma.
+                        For type=saturate, values is a single real number value (0 to 1).
+                        For type=hueRotate, values is a degrees value.
+                        For type=luminanceToAlpha, values is not used." Foreground="DarkGreen" FontSize="9" Margin="1" TextWrapping="Wrap">
+                        </TextBlock>
+                        <TextBlock Text="If not specified, then the default depends on the value of attribute type.
+                        If type=matrix, the identity matrix.
+                        If type=saturate,  1, operating as the identity matrix.
+                        If type=hueRotate, 0, again operating as the identity matrix." 
+                               Foreground="DarkGreen" FontSize="9" Margin="1" TextWrapping="Wrap">
+                        </TextBlock>
+                    </StackPanel>
+                </TextBox.ToolTip>
+            </TextBox>
+
+        </Grid>
+    </Expander>
+</UserControl>

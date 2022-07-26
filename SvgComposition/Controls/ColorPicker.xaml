@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="SvgComposition.Controls.ColorPicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:SvgComposition.Controls"
+             mc:Ignorable="d"  Foreground="Black"
+             d:DesignHeight="360" d:DesignWidth="600">
+	<UserControl.Background>
+		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+			<GradientStop Color="#FFA8EAC0" Offset="0"/>
+			<GradientStop Color="#FF9BA0A2" Offset="1"/>
+			<GradientStop Color="#FF669BB8" Offset="0.24"/>
+			<GradientStop Color="#FF506D7D" Offset="0.518"/>
+			<GradientStop Color="#FF7BC5F0" Offset="0.788"/>
+		</LinearGradientBrush>
+	</UserControl.Background>
+    <Border BorderBrush="Black" BorderThickness="2">
+        <StackPanel Margin="3" Orientation="Horizontal">
+            <StackPanel>
+                <TextBlock Margin="1" Text="A" TextAlignment="Center"></TextBlock>
+                <controls:FormattedSlider x:Name="Aslider" Orientation="Vertical" HorizontalAlignment="Left" TickPlacement="Both"
+                    Height="300" Width="60"  Maximum="255" Minimum="0" TickFrequency="10" Margin="2"
+                     BorderBrush="Black" BorderThickness="1" Background="#00F0FFFF" Foreground="Black"
+                    AutoToolTipFormat="{}A {0}"
+                        AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2"
+                     Ticks="10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210. 220, 230, 240, 250" 
+                     ValueChanged="Slider_OnValueChanged">
+                </controls:FormattedSlider>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Margin="1" Text="R" TextAlignment="Center"></TextBlock>
+                <controls:FormattedSlider x:Name="Rslider" Orientation="Vertical" HorizontalAlignment="Left" TickPlacement="Both" 
+                Height="300"  Width="60"  Maximum="255" Minimum="0" TickFrequency="10"
+                 BorderThickness="1" Background="#00F0FFFF" Foreground="Black" Margin="2"
+                Ticks="10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210. 220, 230, 240, 250" 
+                AutoToolTipFormat="{}R {0}"
+                ValueChanged="Slider_OnValueChanged" AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2" 
+                BorderBrush="Black">
+
+                </controls:FormattedSlider>
+            </StackPanel>
+            <StackPanel  >
+                <TextBlock Margin="1" Text="G" TextAlignment="Center"></TextBlock>
+                <controls:FormattedSlider x:Name="Gslider" Orientation="Vertical" HorizontalAlignment="Left" TickPlacement="Both"
+                Height="300"  Width="60"  Maximum="255" Minimum="0" TickFrequency="10"
+                 BorderThickness="1" Background="#00F0FFFF" Foreground="Black" Margin="2"
+                                Ticks="10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210. 220, 230, 240, 250" 
+                AutoToolTipFormat="{}G {0}"
+                AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2"
+                BorderBrush="Black" ValueChanged="Slider_OnValueChanged" >
+
+                </controls:FormattedSlider>
+            </StackPanel>
+            <StackPanel  >
+                <TextBlock Margin="1" Text="B" TextAlignment="Center"></TextBlock>
+                <controls:FormattedSlider x:Name="Bslider" Orientation="Vertical" HorizontalAlignment="Left" TickPlacement="Both"
+                Height="300"  Width="60"  Maximum="255" Minimum="0" TickFrequency="10" Margin="2"
+                 BorderThickness="1" Background="#00F0FFFF" Foreground="Black"
+                Ticks="10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210. 220, 230, 240, 250" 
+                AutoToolTipFormat="{}B {0}"
+                ValueChanged="Slider_OnValueChanged" AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2" 
+                BorderBrush="Black">
+                </controls:FormattedSlider>
+            </StackPanel>
+            <StackPanel>
+                <Border BorderBrush="Black" HorizontalAlignment="Left"
+                        BorderThickness="1" Height="28" Width="166" VerticalAlignment="Top" >
+                    <Rectangle x:Name="ValueRect" 
+                            Margin="0,0,0,0"  />
+                </Border>
+                <ScrollViewer Height="300" Width="300" >
+                	<WrapPanel x:Name="GridColors" Orientation="Horizontal" />
+                </ScrollViewer>
+                <!--
+                <Image Source="Data/system_windows_media_colors_ART_color_table.png" Height="275"></Image>
+                -->
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Select" Margin="3" x:Name="SelectButton" Click="SelectButton_OnClick" Width="80" Height="30"></Button>
+                    <Button Content="Cancel" Margin="3" x:Name="CancelButton" Click="CancelButton_OnClick" Width="80" Height="30"></Button>
+                    <TextBlock x:Name="PoundRgb" Width="80" Height="30" Margin="3"></TextBlock>
+                </StackPanel> 
+            </StackPanel>
+        </StackPanel>
+    </Border>
+
+</UserControl>

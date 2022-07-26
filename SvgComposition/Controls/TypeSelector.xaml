@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="SvgComposition.Controls.TypeSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SvgComposition.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="200">
+    <UserControl.Resources>
+        <LinearGradientBrush  x:Key="lgb" EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF000000" Offset="0"/>
+            <GradientStop Color="LightCyan"  Offset="0.6"/>
+            <GradientStop Color="#FF000000" Offset="1"/>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+    <WrapPanel Margin="2" >
+
+        <ComboBox x:Name="NTypeCombo" Background="{StaticResource lgb}"
+                      ItemsSource="{Binding Path=NTypeTypes}" 
+                     
+                      SelectionChanged="NTypeCombo_OnSelectionChanged"
+                      Text="More"
+                      IsEditable="true"
+                      IsReadOnly="true"/>
+
+        <!--<TextBlock x:Name="SelectionText" FontSize="10" 
+                       Text="{Binding ElementName=ComboBox1, Path=SelectedItem}"/>-->
+        
+    </WrapPanel>
+</UserControl>

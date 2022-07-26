@@ -1,0 +1,83 @@
+using System.Collections.Generic;
+ using System.Collections.ObjectModel;
+ using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using SvgComposition.AttributeControls;
+using SvgComposition.Controls;
+using SvgComposition.Model;
+using SvgCompositionTool.Dialogs;
+ 
+namespace SvgComposition.ElementControls
+{
+public void CreateElement7354()
+{
+SvgElement el1 = CreateAnElement(true, null, "Filtertexture", "", "svg",0);
+SvgAttribute at1 = CreateAnAttribute(el1, "id", "Filtertexture", "", SvgAttributeType.Value, "px");
+SvgAttribute at2 = CreateAnAttribute(el1, "width", "470", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at3 = CreateAnAttribute(el1, "height", "250", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at4 = CreateAnAttribute(el1, "viewBox", "0, 0, 470, 250", "", SvgAttributeType.Value, "px");
+SvgElement el2 = CreateAnElement(false, el1, "conform", "", "filter",0);
+SvgAttribute at5 = CreateAnAttribute(el2, "id", "conform", "", SvgAttributeType.Value, "px");
+SvgAttribute at6 = CreateAnAttribute(el2, "x", "-50", "", SvgAttributeType.LengthPercent, "%");
+SvgAttribute at7 = CreateAnAttribute(el2, "y", "-50", "", SvgAttributeType.LengthPercent, "%");
+SvgAttribute at8 = CreateAnAttribute(el2, "width", "200", "", SvgAttributeType.LengthPercent, "%");
+SvgAttribute at9 = CreateAnAttribute(el2, "height", "200", "", SvgAttributeType.LengthPercent, "%");
+SvgElement el3 = CreateAnElement(false, el2, "", "", "feImage",0);
+SvgAttribute at10 = CreateAnAttribute(el3, "href", "https://dragonsawaken.net/leho/GameOfThronesCoins/content/images/large/DSC03787.jpg", "", SvgAttributeType.Value, "px");
+SvgAttribute at11 = CreateAnAttribute(el3, "x", "0", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at12 = CreateAnAttribute(el3, "y", "0", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at13 = CreateAnAttribute(el3, "preserveAspectRatio", "none", "", SvgAttributeType.Text, "px");
+SvgAttribute at14 = CreateAnAttribute(el3, "height", "100", "", SvgAttributeType.LengthPercent, "%");
+SvgAttribute at15 = CreateAnAttribute(el3, "width", "100", "", SvgAttributeType.LengthPercent, "%");
+SvgElement el4 = CreateAnElement(false, el2, "", "", "feColorMatrix",0);
+SvgAttribute at16 = CreateAnAttribute(el4, "type", "saturate", "", SvgAttributeType.Text, "px");
+SvgAttribute at17 = CreateAnAttribute(el4, "result", "IMAGE", "", SvgAttributeType.Value, "px");
+SvgAttribute at18 = CreateAnAttribute(el4, "values", " 0", "", SvgAttributeType.Value, "px");
+SvgElement el5 = CreateAnElement(false, el2, "", "", "feGaussianBlur",0);
+SvgAttribute at19 = CreateAnAttribute(el5, "in", "IMAGE", "", SvgAttributeType.Value, "px");
+SvgAttribute at20 = CreateAnAttribute(el5, "stdDeviation", "0.25", "none", SvgAttributeType.Value, "px");
+SvgAttribute at21 = CreateAnAttribute(el5, "result", "MAP", "", SvgAttributeType.Value, "px");
+SvgElement el6 = CreateAnElement(false, el2, "", "", "feDisplacementMap",0);
+SvgAttribute at22 = CreateAnAttribute(el6, "in", "SourceGraphic", "", SvgAttributeType.Text, "px");
+SvgAttribute at23 = CreateAnAttribute(el6, "in2", "MAP", "", SvgAttributeType.Value, "px");
+SvgAttribute at24 = CreateAnAttribute(el6, "scale", "15", "", SvgAttributeType.Value, "px");
+SvgAttribute at25 = CreateAnAttribute(el6, "xChannelSelector", "R", "", SvgAttributeType.Text, "px");
+SvgAttribute at26 = CreateAnAttribute(el6, "yChannelSelector", "R", "", SvgAttributeType.Text, "px");
+SvgAttribute at27 = CreateAnAttribute(el6, "result", "TEXTURED_TEXT", "", SvgAttributeType.Value, "px");
+SvgElement el7 = CreateAnElement(false, el2, "", "", "feImage",0);
+SvgAttribute at28 = CreateAnAttribute(el7, "href", "https://dragonsawaken.net/leho/GameOfThronesCoins/content/images/large/DSC03787.jpg", "", SvgAttributeType.Value, "px");
+SvgAttribute at29 = CreateAnAttribute(el7, "x", "0", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at30 = CreateAnAttribute(el7, "y", "0", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at31 = CreateAnAttribute(el7, "preserveAspectRatio", "none", "", SvgAttributeType.Text, "px");
+SvgAttribute at32 = CreateAnAttribute(el7, "height", "100", "", SvgAttributeType.LengthPercent, "%");
+SvgAttribute at33 = CreateAnAttribute(el7, "width", "100", "", SvgAttributeType.LengthPercent, "%");
+SvgAttribute at34 = CreateAnAttribute(el7, "result", "BG", "", SvgAttributeType.Value, "px");
+SvgElement el8 = CreateAnElement(false, el2, "", "", "feColorMatrix",0);
+SvgAttribute at35 = CreateAnAttribute(el8, "in", "TEXTURED_TEXT", "", SvgAttributeType.Value, "px");
+SvgAttribute at36 = CreateAnAttribute(el8, "type", "matrix", "", SvgAttributeType.Text, "px");
+SvgAttribute at37 = CreateAnAttribute(el8, "values", " 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .9 0", "", SvgAttributeType.Value, "px");
+SvgAttribute at38 = CreateAnAttribute(el8, "result", "Textured_Text_2", "", SvgAttributeType.Value, "px");
+SvgElement el9 = CreateAnElement(false, el2, "", "", "feBlend",0);
+SvgAttribute at39 = CreateAnAttribute(el9, "in", "BG", "", SvgAttributeType.Value, "px");
+SvgAttribute at40 = CreateAnAttribute(el9, "in2", "Textured_Text_2", "", SvgAttributeType.Value, "px");
+SvgAttribute at41 = CreateAnAttribute(el9, "mode", "multiply", "", SvgAttributeType.Text, "px");
+SvgAttribute at42 = CreateAnAttribute(el9, "result", "BLENDED_TEXT", "", SvgAttributeType.Value, "px");
+SvgElement el10 = CreateAnElement(false, el2, "", "", "feMerge",0);
+SvgElement el11 = CreateAnElement(false, el10, "", "", "feMergeNode",0);
+SvgAttribute at43 = CreateAnAttribute(el11, "in", "BG", "", SvgAttributeType.Value, "px");
+SvgElement el12 = CreateAnElement(false, el10, "", "", "feMergeNode",0);
+SvgAttribute at44 = CreateAnAttribute(el12, "in", "BLENDED_TEXT", "", SvgAttributeType.Value, "px");
+SvgElement el13 = CreateAnElement(false, el1, "", "Faceless Man", "text",0);
+SvgAttribute at45 = CreateAnAttribute(el13, "dx", "60", "", SvgAttributeType.Value, "px");
+SvgAttribute at46 = CreateAnAttribute(el13, "dy", "200", "", SvgAttributeType.Value, "px");
+SvgAttribute at47 = CreateAnAttribute(el13, "font-size", "8", "", SvgAttributeType.LengthPercent, "em");
+SvgAttribute at48 = CreateAnAttribute(el13, "font-weight", "bold", "", SvgAttributeType.Text, "px");
+SvgAttribute at49 = CreateAnAttribute(el13, "fill", "#00d1af", "", SvgAttributeType.Color, "px");
+CreateAColor(at49, 0, 255, 0, 209, 175);
+SvgAttribute at50 = CreateAnAttribute(el13, "filter", "url(#conform)", "", SvgAttributeType.Text, "px");
+     }
+}

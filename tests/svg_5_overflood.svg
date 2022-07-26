@@ -1,0 +1,80 @@
+   <svg xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="overflood" 
+   width="330" height="196" viewBox="0, 0, 1100, 650" >
+        <circle cx="100" cy="100" r="80" stroke="#afeeee" stroke-opacity="1.0" stroke-width="1px" fill="#4169e1" 
+        fill-opacity="1.0" ></circle>
+
+        <filter x="-5%" y="-5%" width="110%" height="110%" id="overflood" >
+             <feFlood flood-color="#ffffff" flood-opacity="1" result="flood" ></feFlood>
+
+             <feComposite in="SourceGraphic" in2="BackgroundImage" operator="over" result="comp" ></feComposite>
+
+             <feMerge >
+                  <feMergeNode in="flood" ></feMergeNode>
+
+                  <feMergeNode in="comp" ></feMergeNode>
+</feMerge>
+</filter>
+
+        <filter x="-5%" y="-5%" width="110%" height="110%" id="inflood" >
+             <feFlood flood-color="#ffffff" flood-opacity="1" result="flood" ></feFlood>
+
+             <feMerge >
+                  <feMergeNode in="flood" ></feMergeNode>
+
+                  <feMergeNode in="comp" ></feMergeNode>
+</feMerge>
+
+             <feComposite in="SourceGraphic" in2="BackgroundImage" operator="in" result="comp" ></feComposite>
+</filter>
+
+        <filter x="-5%" y="-5%" width="110%" height="110%" id="atopflood" >
+             <feFlood flood-color="#ffffff" flood-opacity="1" result="flood" ></feFlood>
+
+             <feMerge >
+                  <feMergeNode in="flood" ></feMergeNode>
+
+                  <feMergeNode in="comp" ></feMergeNode>
+</feMerge>
+
+             <feComposite in="SourceGraphic" in2="BackgroundImage" operator="atop" result="comp" ></feComposite>
+</filter>
+
+        <filter x="-5%" y="-5%" width="110%" height="110%" id="outflood" >
+             <feFlood flood-color="#ffffff" flood-opacity="1" result="flood" ></feFlood>
+
+             <feMerge >
+                  <feMergeNode in="flood" ></feMergeNode>
+
+                  <feMergeNode in="comp" ></feMergeNode>
+</feMerge>
+
+             <feComposite in="SourceGraphic" in2="BackgroundImage" operator="out" result="comp" ></feComposite>
+</filter>
+
+        <filter x="-5%" y="-5%" width="110%" height="110%" id="xorflood" >
+             <feFlood flood-color="#ffffff" flood-opacity="1" result="flood" ></feFlood>
+
+             <feMerge >
+                  <feMergeNode in="flood" ></feMergeNode>
+
+                  <feMergeNode in="comp" ></feMergeNode>
+</feMerge>
+
+             <feComposite in="SourceGraphic" in2="BackgroundImage" operator="xor" result="comp" ></feComposite>
+</filter>
+
+        <filter x="-5%" y="-5%" width="110%" height="110%" id="aritmaticflood" >
+             <feFlood flood-color="#ffffff" flood-opacity="1" result="flood" ></feFlood>
+
+             <feMerge >
+                  <feMergeNode in="flood" ></feMergeNode>
+
+                  <feMergeNode in="comp" ></feMergeNode>
+</feMerge>
+
+             <feComposite in="SourceGraphic" in2="BackgroundImage" operator="arithmetic" result="comp" 
+             k1=".5" k2=",5" k3=".5" k4=".5" ></feComposite>
+</filter>
+</svg>

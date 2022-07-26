@@ -1,0 +1,87 @@
+using System.Collections.Generic;
+ using System.Collections.ObjectModel;
+ using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using SvgComposition.AttributeControls;
+using SvgComposition.Controls;
+using SvgComposition.Model;
+using SvgCompositionTool.Dialogs;
+ 
+namespace SvgComposition.ElementControls
+{
+public void CreateElement8546()
+{
+SvgElement el1 = CreateAnElement(true, el0, "patternstest", "", "svg",0);
+SvgAttribute at1 = CreateAnAttribute(el1, "id", "patternstest", "", SvgAttributeType.Value, "px");
+SvgAttribute at2 = CreateAnAttribute(el1, "width", "200", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at3 = CreateAnAttribute(el1, "height", "200", "", SvgAttributeType.LengthPercent, "");
+SvgElement el2 = CreateAnElement(false, el1, "", "", "defs",0);
+SvgElement el3 = CreateAnElement(false, el2, "GradientOne", "", "linearGradient",0);
+SvgAttribute at4 = CreateAnAttribute(el3, "id", "GradientOne", "", SvgAttributeType.Value, "px");
+SvgElement el4 = CreateAnElement(false, el3, "", "", "stop",0);
+SvgAttribute at5 = CreateAnAttribute(el4, "offset", "5%", "", SvgAttributeType.Value, "px");
+SvgAttribute at6 = CreateAnAttribute(el4, "stop-color", "#ffffff", "", SvgAttributeType.Color, "px");
+CreateAColor(at6, 0, 255, 255, 255, 255);
+SvgElement el5 = CreateAnElement(false, el3, "", "", "stop",0);
+SvgAttribute at7 = CreateAnAttribute(el5, "offset", "95%", "", SvgAttributeType.Value, "px");
+SvgAttribute at8 = CreateAnAttribute(el5, "stop-color", "#0000ff", "", SvgAttributeType.Color, "px");
+CreateAColor(at8, 0, 255, 0, 0, 255);
+SvgElement el6 = CreateAnElement(false, el2, "GradientTwo", "", "linearGradient",0);
+SvgAttribute at9 = CreateAnAttribute(el6, "id", "GradientTwo", "", SvgAttributeType.Value, "px");
+SvgElement el7 = CreateAnElement(false, el6, "", "", "stop",0);
+SvgAttribute at10 = CreateAnAttribute(el7, "offset", "5%", "", SvgAttributeType.Value, "px");
+SvgAttribute at11 = CreateAnAttribute(el7, "stop-color", "#ff0000", "", SvgAttributeType.Color, "px");
+CreateAColor(at11, 0, 255, 255, 0, 0);
+SvgElement el8 = CreateAnElement(false, el6, "", "", "stop",0);
+SvgAttribute at12 = CreateAnAttribute(el8, "offset", "95%", "", SvgAttributeType.Value, "px");
+SvgAttribute at13 = CreateAnAttribute(el8, "stop-color", "#ffa500", "", SvgAttributeType.Color, "px");
+CreateAColor(at13, 0, 255, 255, 165, 0);
+SvgElement el9 = CreateAnElement(false, el1, "Pattern", "", "pattern",0);
+SvgAttribute at14 = CreateAnAttribute(el9, "height", ".25", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at15 = CreateAnAttribute(el9, "width", ".25", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at16 = CreateAnAttribute(el9, "x", "0", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at17 = CreateAnAttribute(el9, "y", "0", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at18 = CreateAnAttribute(el9, "id", "Pattern", "", SvgAttributeType.Value, "px");
+SvgElement el10 = CreateAnElement(false, el9, "", "", "rect",0);
+SvgAttribute at19 = CreateAnAttribute(el10, "id", "", "", SvgAttributeType.Value, "px");
+SvgAttribute at20 = CreateAnAttribute(el10, "x", "0", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at21 = CreateAnAttribute(el10, "y", "0", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at22 = CreateAnAttribute(el10, "width", "50", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at23 = CreateAnAttribute(el10, "height", "50", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at24 = CreateAnAttribute(el10, "fill", "#87ceeb", "", SvgAttributeType.Color, "px");
+CreateAColor(at24, 0, 255, 135, 206, 235);
+SvgAttribute at25 = CreateAnAttribute(el10, "fill-opacity", "1.0", "", SvgAttributeType.Value, "px");
+SvgElement el11 = CreateAnElement(false, el9, "", "", "rect",0);
+SvgAttribute at26 = CreateAnAttribute(el11, "id", "", "", SvgAttributeType.Value, "px");
+SvgAttribute at27 = CreateAnAttribute(el11, "x", "0", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at28 = CreateAnAttribute(el11, "y", "0", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at29 = CreateAnAttribute(el11, "width", "25", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at30 = CreateAnAttribute(el11, "height", "25", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at31 = CreateAnAttribute(el11, "stroke-width", "1", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at32 = CreateAnAttribute(el11, "fill", "url(#GradientTwo)", "none", SvgAttributeType.Url, "px");
+CreateAColor(at32, 0, 255, 135, 206, 235);
+SvgAttribute at33 = CreateAnAttribute(el11, "fill-opacity", "1.0", "", SvgAttributeType.Value, "px");
+SvgElement el12 = CreateAnElement(false, el9, "", "", "circle",0);
+SvgAttribute at34 = CreateAnAttribute(el12, "cx", "25", "", SvgAttributeType.LengthPercent, " ");
+SvgAttribute at35 = CreateAnAttribute(el12, "cy", "25", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at36 = CreateAnAttribute(el12, "r", "20", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at37 = CreateAnAttribute(el12, "fill", "url(#GradientOne)", "none", SvgAttributeType.Url, "px");
+CreateAColor(at37, 0, 255, 0, 0, 0);
+SvgAttribute at38 = CreateAnAttribute(el12, "fill-opacity", ".5", "", SvgAttributeType.Value, "px");
+SvgElement el13 = CreateAnElement(false, el1, "", "", "rect",0);
+SvgAttribute at39 = CreateAnAttribute(el13, "id", "", "", SvgAttributeType.Value, "px");
+SvgAttribute at40 = CreateAnAttribute(el13, "width", "200", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at41 = CreateAnAttribute(el13, "height", "200", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at42 = CreateAnAttribute(el13, "stroke", "#000000", "", SvgAttributeType.Color, "px");
+CreateAColor(at42, 0, 255, 0, 0, 0);
+SvgAttribute at43 = CreateAnAttribute(el13, "stroke-opacity", "1.0", "", SvgAttributeType.Value, "px");
+SvgAttribute at44 = CreateAnAttribute(el13, "stroke-width", "1", "", SvgAttributeType.LengthPercent, "");
+SvgAttribute at45 = CreateAnAttribute(el13, "fill", "url(#Pattern)", "none", SvgAttributeType.Url, "px");
+CreateAColor(at45, 0, 255, 0, 0, 0);
+SvgAttribute at46 = CreateAnAttribute(el13, "fill-opacity", "1.0", "", SvgAttributeType.Value, "px");
+     }
+}
