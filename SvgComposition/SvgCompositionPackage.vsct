@@ -64,14 +64,18 @@
 
   <Symbols>
     <!-- This is the package guid. -->
-    <GuidSymbol name="guidSvgCompositionPackage" value="{7d0bdabc-2417-4b95-9b8f-0b994257c114}" />
+	  <!-- GuidSymbol name="guidSvgCompositionPackage" value="{7d0bdabc-2417-4b95-9b8f-0b994257c114}" -->
+	  <GuidSymbol name="guidSvgCompositionPackage" value="{5e8c1698-2169-49b0-b09a-d201fd3c8088}" />
 
     <!-- This is the guid used to group the menu commands together -->
-    <GuidSymbol name="guidSvgCompositionPackageCmdSet" value="{099eb8e6-f0d3-4aab-877f-050824223367}">
+	  <!-- GuidSymbol name="guidSvgCompositionPackageCmdSet" value="{099eb8e6-f0d3-4aab-877f-050824223367}" -->
+	<GuidSymbol name="guidSvgCompositionPackageCmdSet" value="{efb867a9-bd0b-4db1-9442-e244c3996642}">
       <IDSymbol name="SvgToolWindowCommandId" value="0x0100" />
     </GuidSymbol>
 
-    <GuidSymbol name="guidImages" value="{c39fab53-fb2f-4757-96fe-94853bfbbd83}" >
+	  <!-- GuidSymbol name="guidImages" value="{c39fab53-fb2f-4757-96fe-94853bfbbd83}" -->
+
+	<GuidSymbol name="guidImages" value="{657d4049-4969-41fa-82a2-1e0ef433fe16}" >
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />

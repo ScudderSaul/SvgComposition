@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// old was SvgComposition.23be47a1-3e1e-4d97-acb9-28fffc2c48c5
+
+// 70822a56-0169-41c7-9a71-5de7caf25178
+
 namespace SvgComposition
 {
     using System.Drawing;

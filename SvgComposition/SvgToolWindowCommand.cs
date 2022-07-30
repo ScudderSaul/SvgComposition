@@ -22,7 +22,8 @@ namespace SvgComposition
         /// <summary>
         /// Command menu group (command set GUID).
         /// </summary>
-        public static readonly Guid CommandSet = new Guid("099eb8e6-f0d3-4aab-877f-050824223367");
+       /// public static readonly Guid CommandSet = new Guid("099eb8e6-f0d3-4aab-877f-050824223367");
+        public static readonly Guid CommandSet = new Guid("efb867a9-bd0b-4db1-9442-e244c3996642");
 
         /// <summary>
         /// VS Package that provides this command, not null.

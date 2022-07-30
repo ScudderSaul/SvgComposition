@@ -15,7 +15,8 @@ namespace SvgComposition
     /// implementation of the IVsUIElementPane interface.
     /// </para>
     /// </remarks>
-    [Guid("4d1647a8-fa1e-4f58-b9d5-e1fb94756604")]
+    ///[Guid("4d1647a8-fa1e-4f58-b9d5-e1fb94756604")]
+    [Guid("914c45b2-9ae9-47d0-88ee-c3b08564a69b")]
     public class SvgToolWindow : ToolWindowPane
     {
         /// <summary>

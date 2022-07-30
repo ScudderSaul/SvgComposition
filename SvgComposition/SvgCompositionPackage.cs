@@ -33,7 +33,8 @@ namespace SvgComposition
         /// <summary>
         /// SvgCompositionPackage GUID string.
         /// </summary>
-        public const string PackageGuidString = "7d0bdabc-2417-4b95-9b8f-0b994257c114";
+      //  public const string PackageGuidString = "7d0bdabc-2417-4b95-9b8f-0b994257c114";
+        public const string PackageGuidString = "5e8c1698-2169-49b0-b09a-d201fd3c8088";
 
         public static string ConnectionOther = string.Empty;
 
